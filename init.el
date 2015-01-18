@@ -37,6 +37,7 @@
 (require 'ap-packages)
 (require 'ap-core)
 (require 'ap-essentials)
+(require 'ap-ido)
 
 ;;; Final loads
 
