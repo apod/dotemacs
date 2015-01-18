@@ -44,7 +44,7 @@
 ;; Don't use tab character for indentation
 (setq-default indent-tabs-mode nil)
 
-;; Whitespace mode setup
+;; Whitespace mode configuration
 (setq whitespace-display-mappings '((newline-mark 10 [172 10])
                                     (space-mark 32 [183] [46])
                                     (tab-mark 9 [187 9] [92 9])))
@@ -69,7 +69,7 @@
                 uniquify-ignore-buffers-re "^\\*"
                 uniquify-after-kill-buffer-p t))
 
-;; Save last cursor position
+;; Save last pointer position
 (use-package saveplace
   :config (progn
             (setq save-place-file (expand-file-name "saveplace" ap-data-directory))
