@@ -36,4 +36,9 @@
   :ensure t
   :bind ("C-x 1" . zygospore-toggle-delete-other-windows))
 
+;;; Eldoc
+(use-package eldoc-mode
+  :diminish eldoc-mode
+  :defer t)
+
 (provide 'ap-essentials)
