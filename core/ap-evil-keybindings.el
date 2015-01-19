@@ -30,5 +30,47 @@
 (bind-key "[ SPC" 'ap-newline-above   evil-normal-state-map)
 (bind-key "] e"   'ap-move-line-below evil-normal-state-map)
 (bind-key "[ e"   'ap-move-line-above evil-normal-state-map)
+(bind-key "] b"   'switch-to-next-buffer evil-normal-state-map)
+(bind-key "[ b"   'switch-to-prev-buffer evil-normal-state-map)
+
+;;; Leader key keybindings
+
+;; Universal argument
+(evil-leader/set-key "u" 'universal-argument)
+
+;; Shell
+(evil-leader/set-key "!" 'shell-command)
+
+;; Buffers
+(evil-leader/set-key
+  "TAB" 'evil-buffer
+  "bk" 'kill-buffer
+  "bK" 'kill-buffer-and-window)
+
+;; Windows
+(evil-leader/set-key
+  "ww" 'zygospore-toggle-delete-other-windows
+  "wj" 'evil-window-down
+  "wk" 'evil-window-up
+  "wl" 'evil-window-right
+  "wh" 'evil-window-left
+  "ws" 'split-window-below
+  "wv" 'split-window-right)
+
+;; Narrowing
+(evil-leader/set-key
+  "nn" 'ap-narrow-or-widen-dwim
+  "nr" 'narrow-to-region
+  "nf" 'narrow-to-defun
+  "nw" 'widen)
+
+;; Toggle
+(evil-leader/set-key
+  "tn" 'global-linum-mode
+  "th" 'whitespace-mode)
+
+;; Magit
+(evil-leader/set-key
+  "gs" 'magit-status)
 
 (provide 'ap-evil-keybindings)
