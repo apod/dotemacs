@@ -22,7 +22,9 @@
 ;;; Smartparens
 (use-package smartparens
   :ensure t
-  :init (smartparens-global-mode t))
+  :diminish ""
+  :init (smartparens-global-mode t)
+  :config (require 'smartparens-config))
 
 ;;; Expand-region
 (use-package expand-region
