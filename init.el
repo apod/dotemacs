@@ -39,6 +39,7 @@
 (require 'ap-appearance)
 (require 'ap-defuns)
 (require 'ap-evil)
+(require 'ap-evil-keybindings)
 (require 'ap-essentials)
 (require 'ap-ido)
 
