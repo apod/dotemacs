@@ -39,6 +39,7 @@
 (require 'ap-essentials)
 (require 'ap-ido)
 (require 'ap-appearance)
+(require 'ap-defuns)
 
 ;;; Final loads
 
