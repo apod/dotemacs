@@ -24,6 +24,10 @@
   :ensure t
   :init (smartparens-global-mode t))
 
+;;; Expand-region
+(use-package expand-region
+  :ensure t)
+
 ;;; Zygospore, make C-x 1 toggleable
 (use-package zygospore
   :ensure t
