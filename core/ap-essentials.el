@@ -19,6 +19,11 @@
   :ensure t
   :init (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
+;;; Smartparens
+(use-package smartparens
+  :ensure t
+  :init (smartparens-global-mode t))
+
 ;;; Zygospore, make C-x 1 toggleable
 (use-package zygospore
   :ensure t
