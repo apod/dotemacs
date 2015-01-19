@@ -7,6 +7,9 @@
 ;; * and # work on symbols instead of words
 (setq-default evil-symbol-word-search t)
 
+(use-package undo-tree
+  :diminish "")
+
 (use-package evil
   :ensure t
   :init (progn
