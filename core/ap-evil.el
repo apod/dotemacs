@@ -43,5 +43,25 @@
             (bind-key [escape] 'keyboard-escape-quit minibuffer-local-must-match-map)
             (bind-key [escape] 'keyboard-escape-quit minibuffer-local-isearch-map)))
 
+(use-package evil-leader
+  :ensure t
+  :init (global-evil-leader-mode t)
+  :configure (evil-leader/set-leader "<SPC>"))
+
+(use-package evil-surround
+  :ensure t
+  :init (global-evil-surround-mode t))
+
+(use-package evil-visualstar
+  :ensure t
+  :init (global-evil-visualstar-mode t))
+
+(use-package evil-nerd-commenter
+  :ensure t
+  :pre-load (setq evilnc-hotkey-comment-operator "gc"))
+
+(use-package evil-exchange
+  :ensure t
+  :init (evil-exchange-install))
 
 (provide 'ap-evil)
