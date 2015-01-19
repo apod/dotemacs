@@ -26,13 +26,20 @@
 (unless (file-exists-p ap-local-directory)
   (make-directory ap-local-directory))
 
+
 ;;; Core
 
 (defvar ap-core-directory (expand-file-name "core" user-emacs-directory)
   "This directory contains all the core configuration.")
 
+(defvar ap-languages-directory (expand-file-name "languages" user-emacs-directory)
+  "This directory contains all the language configurations.")
+(unless (file-exists-p ap-languages-directory)
+  (make-directory ap-languages-directory))
+
 ;; Add core directory to load-path
 (add-to-list 'load-path ap-core-directory)
+(add-to-list 'load-path ap-languages-directory)
 
 (require 'ap-packages)
 (require 'ap-core)
@@ -42,6 +49,9 @@
 (require 'ap-evil-keybindings)
 (require 'ap-essentials)
 (require 'ap-ido)
+
+;; Languages
+(require 'ap-emacs-lisp)
 
 ;;; Final loads
 
