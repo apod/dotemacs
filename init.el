@@ -36,10 +36,11 @@
 
 (require 'ap-packages)
 (require 'ap-core)
-(require 'ap-essentials)
-(require 'ap-ido)
 (require 'ap-appearance)
 (require 'ap-defuns)
+(require 'ap-evil)
+(require 'ap-essentials)
+(require 'ap-ido)
 
 ;;; Final loads
 
