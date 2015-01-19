@@ -1,19 +1,18 @@
 ;;; ap-evil.el
 ;;; Evil configuration
 
-;; C-u for scrolling upwards
-(setq evil-want-C-u-scroll t)
-
-;; * and # work on symbols instead of words
-(setq-default evil-symbol-word-search t)
-
 (use-package undo-tree
   :diminish "")
 
 (use-package evil
   :ensure t
-  :init (progn
-          (evil-mode t))
+  :pre-load (progn
+              ;; C-u for scrolling upwards
+              (setq evil-want-C-u-scroll t)
+
+              ;; * and # work on symbols instead of words
+              (setq-default evil-symbol-word-search t))
+  :init (evil-mode t)
   :config (progn
             ;; Remap j/k to work on visual lines and gj/gk on actual lines
             (bind-key "j"  'evil-next-visual-line evil-motion-state-map)
