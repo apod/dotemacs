@@ -38,6 +38,7 @@
 (require 'ap-core)
 (require 'ap-essentials)
 (require 'ap-ido)
+(require 'ap-appearance)
 
 ;;; Final loads
 
