@@ -24,13 +24,14 @@
 
 ;;; Line numbers
 
+(use-package linum
+  :init (add-hook 'prog-mode-hook 'linum-mode))
+
 (use-package linum-relative
   :ensure t
   :config (setq linum-relative-current-symbol ""
-                linum-relative-format "%4s "))
+                  linum-relative-format "%4s "))
 
-(use-package linum
-  :init (add-hook 'prog-mode-hook 'linum-mode))
 
 ;;; Fonts
 
@@ -53,7 +54,14 @@
                 monokai-height-plus-2 1.0
                 monokai-height-plus-3 1.0
                 monokai-height-plus-4 1.0)
-          (load-theme 'monokai 'no-confirm)))
+          (load-theme 'monokai 'no-confirm))
+  :config (progn
+            (set-face-attribute 'show-paren-match nil :background "#000000"
+                                                      :foreground nil)
+            (set-face-attribute 'region nil :background "#333333")
+            (set-face-attribute 'linum-relative-current-face nil :background "#49483e"
+                                                                 :foreground "#a6e22e"
+                                                                 :weight 'bold)))
 
 ;;; Modeline
 
