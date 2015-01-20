@@ -52,6 +52,7 @@
 
 ;; Languages
 (require 'ap-emacs-lisp)
+(require 'ap-clojure)
 
 ;;; Final loads
 

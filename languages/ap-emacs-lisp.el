@@ -6,9 +6,10 @@
                                           (smartparens-strict-mode t)
                                           (eldoc-mode t)))
   :config (progn
-            (evil-leader/set-key-for-mode 'emacs-lisp-mode "me" 'eval-last-sexp
-                                                           "mx" 'eval-defun
-                                                           "mr" 'eval-region
-                                                           "mb" 'eval-buffer)))
+            (evil-leader/set-key-for-mode 'emacs-lisp-mode
+              "me" 'eval-last-sexp
+              "mx" 'eval-defun
+              "mr" 'eval-region
+              "mb" 'eval-buffer)))
 
 (provide 'ap-emacs-lisp)
