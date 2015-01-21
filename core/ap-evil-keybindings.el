@@ -74,4 +74,9 @@
 (evil-leader/set-key
   "gs" 'magit-status)
 
+;; Projectile
+(evil-leader/set-key
+  "pp" 'projectile-switch-project
+  "pf" 'projectile-find-file)
+
 (provide 'ap-evil-keybindings)
