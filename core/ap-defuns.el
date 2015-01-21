@@ -67,4 +67,12 @@ narrowed."
   (split-window-vertically)
   (other-window 1))
 
+;;; Macros
+(defmacro ap-set-key-for-modes (modes key def &rest bindings)
+  "Define evil leader key bindings for multiple major modes"
+  `(progn
+     ,@(mapcar (lambda (mode)
+                 `(evil-leader/set-key-for-mode (quote ,mode) ,key ,def ,@bindings))
+               modes)))
+
 (provide 'ap-defuns)

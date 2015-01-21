@@ -6,7 +6,7 @@
                                           (smartparens-strict-mode t)
                                           (eldoc-mode t)))
   :config (progn
-            (evil-leader/set-key-for-mode 'emacs-lisp-mode
+            (ap-set-key-for-modes (emacs-lisp-mode lisp-interaction-mode)
               "mi" 'ap-indent-defun
               "me" 'eval-last-sexp
               "mx" 'eval-defun
