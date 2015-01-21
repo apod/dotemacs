@@ -5,6 +5,7 @@
   :ensure t
   :init (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
   :config (evil-leader/set-key-for-mode 'clojure-mode
+            "mi" 'ap-indent-defun
             "mj" 'cider-jack-in
             "mz" 'cider-switch-to-repl-buffer
             "mx" 'cider-eval-defun-at-point

@@ -7,6 +7,7 @@
                                           (eldoc-mode t)))
   :config (progn
             (evil-leader/set-key-for-mode 'emacs-lisp-mode
+              "mi" 'ap-indent-defun
               "me" 'eval-last-sexp
               "mx" 'eval-defun
               "mr" 'eval-region
