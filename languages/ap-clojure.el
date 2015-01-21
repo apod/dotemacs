@@ -38,3 +38,11 @@
   :pin melpa-stable)
 
 (provide 'ap-clojure)
+
+(defadvice cider-last-sexp (around evil activate)
+  "In normal-state, last sexp ends at point."
+  (if (evil-normal-state-p)
+      (progn
+        (unless (or (eobp) (eolp)) (forward-char))
+        ad-do-it)
+    ad-do-it))
