@@ -41,9 +41,14 @@
 ;; Shell
 (evil-leader/set-key "!" 'shell-command)
 
+;; Files
+(evil-leader/set-key
+  "ff" 'ido-find-file)
+
 ;; Buffers
 (evil-leader/set-key
   "TAB" 'evil-buffer
+  "bb" 'ido-switch-buffer
   "bk" 'kill-buffer
   "bK" 'kill-buffer-and-window)
 
