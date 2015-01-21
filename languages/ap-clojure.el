@@ -21,14 +21,8 @@
             (setq nrepl-hide-special-buffers t
                   cider-repl-pop-to-buffer-on-connect nil
                   cider-show-error-buffer 'only-in-repl
-                  cider-repl-history-file (expand-file-name "cider-repl-history" ap-data-directory))
-            (evil-leader/set-key-for-mode 'clojure-mode
-              "mj" 'cider-jack-in
-              "mz" 'cider-switch-to-repl-buffer
-              "mx" 'cider-eval-defun
-              "me" 'cider-eval-last-sexp
-              "mr" 'cider-eval-region
-              "md" 'cider-doc)))
+                  cider-repl-history-file (expand-file-name "cider-repl-history" ap-data-directory)))
+  :pin melpa-stable)
 
 
 (provide 'ap-clojure)
