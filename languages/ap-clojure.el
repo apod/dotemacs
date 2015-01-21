@@ -4,7 +4,7 @@
 (use-package clojure-mode
   :ensure t
   :init (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
-  :config (evil-leader/set-key-for-mode 'clojure-mode
+  :config (ap-set-key-for-modes (clojure-mode cider-clojure-interaction-mode)
             "mi" 'ap-indent-defun
             "mj" 'cider-jack-in
             "mz" 'cider-switch-to-repl-buffer
@@ -24,6 +24,5 @@
                   cider-show-error-buffer 'only-in-repl
                   cider-repl-history-file (expand-file-name "cider-repl-history" ap-data-directory))
   :pin melpa-stable)
-
 
 (provide 'ap-clojure)
