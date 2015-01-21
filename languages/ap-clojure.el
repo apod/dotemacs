@@ -10,6 +10,7 @@
             "mx" 'cider-eval-defun-at-point
             "me" 'cider-eval-last-sexp
             "mr" 'cider-eval-region
+            "mp" 'cider-eval-print-last-sexp
             "md" 'cider-doc))
 
 (use-package cider
@@ -17,11 +18,10 @@
   :init (progn
           (add-hook 'cider-mode-hook #'eldoc-mode)
           (add-hook 'cider-repl-mode-hook #'smartparens-strict-mode))
-  :config (progn
-            (setq nrepl-hide-special-buffers t
+  :config (setq nrepl-hide-special-buffers t
                   cider-repl-pop-to-buffer-on-connect nil
                   cider-show-error-buffer 'only-in-repl
-                  cider-repl-history-file (expand-file-name "cider-repl-history" ap-data-directory)))
+                  cider-repl-history-file (expand-file-name "cider-repl-history" ap-data-directory))
   :pin melpa-stable)
 
 
