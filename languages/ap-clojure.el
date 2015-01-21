@@ -26,6 +26,9 @@
                   cider-show-error-buffer 'only-in-repl
                   cider-repl-history-file (expand-file-name "cider-repl-history" ap-data-directory))
 
+            (evil-leader/set-key-for-mode 'cider-repl-mode
+              "mz" 'cider-switch-to-last-clojure-buffer)
+
             (defun ap-cider-eval-defun-at-point-in-repl ()
               (interactive)
               (let ((form (cider-defun-at-point)))
