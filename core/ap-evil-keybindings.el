@@ -67,7 +67,8 @@
 ;; Toggle
 (evil-leader/set-key
   "tn" 'global-linum-mode
-  "th" 'whitespace-mode)
+  "th" 'whitespace-mode
+  "ts" 'smartparens-strict-mode)
 
 ;; Magit
 (evil-leader/set-key
