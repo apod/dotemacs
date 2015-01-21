@@ -1,7 +1,7 @@
 ;;; ap-defuns.el
 ;;; Helper functions
 
-;; http://endlessparentheses.com/emacs-narrow-or-widen-dwim.html
+;;; http://endlessparentheses.com/emacs-narrow-or-widen-dwim.html
 (defun ap-narrow-or-widen-dwim (p)
   "If the buffer is narrowed, it widens. Otherwise, it narrows intelligently.
 Intelligently means: region, subtree, or defun, whichever applies
@@ -46,12 +46,25 @@ narrowed."
     (forward-line -1)
     (forward-char column)))
 
-;; Indentation functions
+;;; Indentation functions
 (defun ap-indent-defun ()
   "Indent current defun"
   (interactive)
  (let ((l (save-excursion (beginning-of-defun 1) (point)))
         (r (save-excursion (end-of-defun 1) (point))))
     (indent-region l r)))
+
+;;; Window functions
+(defun ap-split-window-horizontally-and-focus ()
+  "Split window horizontally and focus"
+  (interactive)
+  (split-window-horizontally)
+  (other-window 1))
+
+(defun ap-split-window-vertically-and-focus ()
+  "Split window vertically and focus"
+  (interactive)
+  (split-window-vertically)
+  (other-window 1))
 
 (provide 'ap-defuns)

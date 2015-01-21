@@ -54,13 +54,15 @@
 
 ;; Windows
 (evil-leader/set-key
-  "ww" 'zygospore-toggle-delete-other-windows
-  "wj" 'evil-window-down
+   "wj" 'evil-window-down
   "wk" 'evil-window-up
   "wl" 'evil-window-right
   "wh" 'evil-window-left
-  "ws" 'split-window-below
-  "wv" 'split-window-right)
+  "wK" 'delete-window
+  "ws" 'ap-split-window-vertically-and-focus
+  "wS" 'split-window-vertically
+  "wv" 'ap-split-window-horizontally-and-focus
+  "wV" 'split-window-horizontally)
 
 ;; Narrowing
 (evil-leader/set-key
