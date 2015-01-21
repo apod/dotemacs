@@ -67,17 +67,6 @@ narrowed."
   (split-window-vertically)
   (other-window 1))
 
-;;; Cider
-(defun ap-cider-eval-defun-at-point-in-repl ()
-  (interactive)
-  (let ((form (cider-defun-at-point)))
-    (while (string-match "\\`\s+\\|\n+\\'" form)
-      (setq form (replace-match "" t t form)))
-    (set-buffer (cider-current-repl-buffer))
-    (goto-char (point-max))
-    (insert form)
-    (cider-repl-return)))
-
 ;;; Macros
 (defmacro ap-set-key-for-modes (modes key def &rest bindings)
   "Define evil leader key bindings for multiple major modes"

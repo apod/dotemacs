@@ -20,10 +20,21 @@
   :init (progn
           (add-hook 'cider-mode-hook #'eldoc-mode)
           (add-hook 'cider-repl-mode-hook #'smartparens-strict-mode))
-  :config (setq nrepl-hide-special-buffers t
+  :config (progn
+            (setq nrepl-hide-special-buffers t
                   cider-repl-pop-to-buffer-on-connect nil
                   cider-show-error-buffer 'only-in-repl
                   cider-repl-history-file (expand-file-name "cider-repl-history" ap-data-directory))
+
+            (defun ap-cider-eval-defun-at-point-in-repl ()
+              (interactive)
+              (let ((form (cider-defun-at-point)))
+                (while (string-match "\\`\s+\\|\n+\\'" form)
+                  (setq form (replace-match "" t t form)))
+                (set-buffer (cider-current-repl-buffer))
+                (goto-char (point-max))
+                (insert form)
+                (cider-repl-return))))
   :pin melpa-stable)
 
 (provide 'ap-clojure)
