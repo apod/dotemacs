@@ -41,4 +41,12 @@
   :diminish eldoc-mode
   :defer t)
 
+;;; Comint
+(use-package comint
+  :bind ("C-c M-o" . ap-comint-clear-buffer)
+  :init (defun ap-comint-clear-buffer ()
+          (interactive)
+          (let ((comint-buffer-maximum-size 0))
+            (comint-truncate-buffer))))
+
 (provide 'ap-essentials)
