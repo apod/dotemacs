@@ -56,6 +56,7 @@
 (require 'ap-emacs-lisp)
 (require 'ap-clojure)
 (require 'ap-lua)
+(require 'ap-ruby)
 (require 'ap-web)
 
 ;;; Final loads
