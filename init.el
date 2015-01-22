@@ -57,6 +57,7 @@
 (require 'ap-clojure)
 (require 'ap-lua)
 (require 'ap-ruby)
+(require 'ap-sml)
 (require 'ap-web)
 
 ;;; Final loads
