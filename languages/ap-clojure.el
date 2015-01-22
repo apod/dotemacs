@@ -48,4 +48,6 @@
                 ad-do-it)))
   :pin melpa-stable)
 
+(require 'ap-cider-debug)
+
 (provide 'ap-clojure)
