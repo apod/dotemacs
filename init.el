@@ -26,7 +26,6 @@
 (unless (file-exists-p ap-local-directory)
   (make-directory ap-local-directory))
 
-
 ;;; Core
 
 (defvar ap-core-directory (expand-file-name "core" user-emacs-directory)
@@ -43,6 +42,8 @@
 
 (require 'ap-packages)
 (require 'ap-core)
+(when (eq system-type 'darwin)
+  (require 'ap-osx))
 (require 'ap-appearance)
 (require 'ap-defuns)
 (require 'ap-evil)
@@ -50,7 +51,8 @@
 (require 'ap-essentials)
 (require 'ap-ido)
 
-;; Languages
+;;; Languages
+
 (require 'ap-emacs-lisp)
 (require 'ap-clojure)
 (require 'ap-lua)
