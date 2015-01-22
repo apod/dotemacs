@@ -3,7 +3,6 @@
 
 (use-package web-mode
   :ensure t
-  :defer t
   :mode (("\\.html\\'"       . web-mode)
          ("\\.handlebars\\'" . web-mode)
          ("\\.hbs\\'"        . web-mode)
