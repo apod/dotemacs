@@ -11,6 +11,7 @@
             "mx" 'cider-eval-defun-at-point
             "me" 'cider-eval-last-sexp
             "mr" 'cider-eval-region
+            "mk" 'cider-load-buffer
             "mp" 'cider-eval-print-last-sexp
             "m`" 'ap-cider-eval-defun-at-point-in-repl
             "md" 'cider-doc))
