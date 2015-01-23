@@ -59,7 +59,7 @@
   "wk" 'evil-window-up
   "wl" 'evil-window-right
   "wh" 'evil-window-left
-  "wK" 'delete-window
+  "wq" 'delete-window
   "ws" 'ap-split-window-vertically-and-focus
   "wS" 'split-window-vertically
   "wv" 'ap-split-window-horizontally-and-focus
