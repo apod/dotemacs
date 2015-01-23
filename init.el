@@ -59,6 +59,7 @@
 (require 'ap-ruby)
 (require 'ap-sml)
 (require 'ap-web)
+(require 'ap-markdown)
 
 ;;; Final loads
 
