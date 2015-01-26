@@ -20,7 +20,7 @@
   :init (progn
           (setq rbenv-show-active-ruby-in-modeline nil)
           (global-rbenv-mode)
-          (add-hook 'enh-ruby-mode-hook #'rbenv-use-corresponding)))
+          (add-hook 'enh-ruby-mode-hook 'rbenv-use-corresponding)))
 
 (use-package inf-ruby
   :ensure t
@@ -32,7 +32,7 @@
 (use-package robe
   :ensure t
   :defer t
-  :init (add-hook 'enh-ruby-mode-hook #'robe-mode)
+  :init (add-hook 'enh-ruby-mode-hook 'robe-mode)
   :config (evil-leader/set-key-for-mode 'enh-ruby-mode
             "md" 'robe-doc
             "mz" 'robe-start))

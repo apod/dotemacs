@@ -3,7 +3,7 @@
 
 (use-package clojure-mode
   :ensure t
-  :init (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
+  :init (add-hook 'clojure-mode-hook 'smartparens-strict-mode)
   :config (ap-set-key-for-modes (clojure-mode cider-clojure-interaction-mode)
             "mi" 'ap-indent-defun
             "mj" 'cider-jack-in
@@ -19,8 +19,8 @@
 (use-package cider
   :ensure t
   :init (progn
-          (add-hook 'cider-mode-hook #'eldoc-mode)
-          (add-hook 'cider-repl-mode-hook #'smartparens-strict-mode))
+          (add-hook 'cider-mode-hook 'eldoc-mode)
+          (add-hook 'cider-repl-mode-hook 'smartparens-strict-mode))
   :config (progn
             (setq nrepl-hide-special-buffers t
                   cider-repl-pop-to-buffer-on-connect nil
