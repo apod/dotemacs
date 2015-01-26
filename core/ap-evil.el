@@ -14,7 +14,8 @@
               (setq evil-normal-state-cursor '("#f8f8f8" box))
               (setq evil-insert-state-cursor '("#f92672"  (bar . 2)))
               (setq evil-visual-state-cursor '("gray" (hbar . 2)))
-              (setq evil-motion-state-cursor '("plum3" box)))
+              (setq evil-motion-state-cursor '("plum3" box))
+              (setq evil-lispy-state-cursor  '("#562aa6" box)))
   :init (evil-mode t))
 
 (use-package evil-leader
@@ -37,5 +38,10 @@
 (use-package evil-exchange
   :ensure t
   :init (evil-exchange-install))
+
+(use-package evil-lispy
+  :pre-load (use-package lispy
+              :ensure t)
+  :load-path "lisp/")
 
 (provide 'ap-evil)

@@ -3,7 +3,7 @@
 
 (use-package clojure-mode
   :ensure t
-  :init (add-hook 'clojure-mode-hook 'smartparens-strict-mode)
+  :init (add-hook 'clojure-mode-hook 'evil-lispy-mode)
   :config (ap-set-key-for-modes (clojure-mode cider-clojure-interaction-mode)
             "mi" 'ap-indent-defun
             "mj" 'cider-jack-in
