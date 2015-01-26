@@ -8,7 +8,13 @@
   :ensure t
   :pre-load (progn
               (setq evil-want-C-u-scroll t)
-              (setq-default evil-symbol-word-search t))
+              (setq-default evil-symbol-word-search t)
+
+              (setq evil-emacs-state-cursor  '("cyan" box))
+              (setq evil-normal-state-cursor '("#f8f8f8" box))
+              (setq evil-insert-state-cursor '("#f92672"  (bar . 2)))
+              (setq evil-visual-state-cursor '("gray" (hbar . 2)))
+              (setq evil-motion-state-cursor '("plum3" box)))
   :init (evil-mode t))
 
 (use-package evil-leader
