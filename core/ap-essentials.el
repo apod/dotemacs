@@ -19,13 +19,6 @@
   :ensure t
   :init (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
-;;; Smartparens
-(use-package smartparens
-  :ensure t
-  :diminish ""
-  :init (smartparens-global-mode t)
-  :config (require 'smartparens-config))
-
 ;;; Expand-region
 (use-package expand-region
   :ensure t
