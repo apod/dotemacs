@@ -19,8 +19,7 @@
 (use-package cider
   :ensure t
   :init (progn
-          (add-hook 'cider-mode-hook 'eldoc-mode)
-          (add-hook 'cider-repl-mode-hook 'smartparens-strict-mode))
+          (add-hook 'cider-mode-hook 'eldoc-mode))
   :config (progn
             (setq nrepl-hide-special-buffers t
                   cider-repl-pop-to-buffer-on-connect nil
