@@ -30,7 +30,7 @@
 (use-package linum-relative
   :ensure t
   :config (setq linum-relative-current-symbol ""
-                  linum-relative-format "%4s "))
+                linum-relative-format "%4s "))
 
 
 ;;; Fonts
