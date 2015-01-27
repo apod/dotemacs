@@ -3,7 +3,7 @@
 
 (use-package lisp-mode
   :init (add-hook 'emacs-lisp-mode-hook (lambda ()
-                                          (evil-lispy-mode t)
+                                          (smartparens-strict-mode t)
                                           (eldoc-mode t)))
   :config (progn
             (defadvice eval-print-last-sexp (around evil activate)
