@@ -39,4 +39,7 @@
   :ensure t
   :init (evil-exchange-install))
 
+(use-package evil-smartparens
+  :load-path "lisp/")
+
 (provide 'ap-evil)
