@@ -47,6 +47,7 @@
 
 (use-package monokai-theme
   :ensure t
+  :disabled t
   :init (progn
           (setq monokai-use-variable-pitch nil
                 monokai-height-minus-1 1.0
@@ -62,6 +63,18 @@
             (set-face-attribute 'linum-relative-current-face nil :background "#49483e"
                                                                  :foreground "#a6e22e"
                                                                  :weight 'bold)))
+
+(use-package zenburn-theme
+  :ensure t
+  :init (progn
+          (load-theme 'zenburn 'no-confirm))
+  :config (progn
+            (set-face-attribute 'mode-line nil :box nil)
+            (set-face-attribute 'mode-line-inactive nil :box nil)
+            (set-face-attribute 'fringe nil :background "#3f3f3f")
+            (set-face-attribute 'linum-relative-current-face nil :background "#49483e"
+                                :foreground "#e0cf9f"
+                                :weight 'bold)))
 
 ;;; Modeline
 
