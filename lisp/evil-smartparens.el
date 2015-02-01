@@ -47,6 +47,8 @@
          ("l"   . sp-forward-sexp)
          ("j"   . sp-next-sexp)
          ("k"   . sp-previous-sexp)
+         ("e"   . sp-up-sexp)
+         ("d"   . sp-down-sexp)
          ("x"   . sp-kill-sexp)
          ("u"   . undo-tree-undo)
          ("C-r" . undo-tree-redo)
