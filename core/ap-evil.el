@@ -15,7 +15,7 @@
               (setq evil-insert-state-cursor '("#f92672"  (bar . 2)))
               (setq evil-visual-state-cursor '("gray" (hbar . 2)))
               (setq evil-motion-state-cursor '("plum3" box))
-              (setq evil-smartparens-state-cursor '("#562aa6" box)))
+              (setq evil-smartparens-state-cursor '("#f9647e" box)))
   :init (evil-mode t))
 
 (use-package evil-leader
