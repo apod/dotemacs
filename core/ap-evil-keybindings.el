@@ -33,6 +33,9 @@
 (bind-key "] b"   'switch-to-next-buffer evil-normal-state-map)
 (bind-key "[ b"   'switch-to-prev-buffer evil-normal-state-map)
 
+;; Expand region
+(bind-key "v" 'er/expand-region evil-visual-state-map)
+
 ;;; Leader key keybindings
 
 ;; Universal argument

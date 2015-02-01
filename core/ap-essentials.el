@@ -28,8 +28,7 @@
 
 ;;; Expand-region
 (use-package expand-region
-  :ensure t
-  :config (bind-key "v" 'er/expand-region evil-visual-state-map))
+  :ensure t)
 
 ;;; Zygospore, make C-x 1 toggleable
 (use-package zygospore

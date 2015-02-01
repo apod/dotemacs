@@ -46,9 +46,9 @@
   (require 'ap-osx))
 (require 'ap-appearance)
 (require 'ap-defuns)
+(require 'ap-essentials)
 (require 'ap-evil)
 (require 'ap-evil-keybindings)
-(require 'ap-essentials)
 (require 'ap-ido)
 
 ;;; Languages
