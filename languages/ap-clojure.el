@@ -30,7 +30,7 @@
             (evil-leader/set-key-for-mode 'cider-repl-mode
               "mz" 'cider-switch-to-last-clojure-buffer)
 
-            (dolist (map '(cider-docview-mode-map cider-stacktrace-mode-map))
+            (dolist (map '(cider-docview-mode-map cider-stacktrace-mode-map cider-browse-ns-mode-map))
               (evil-define-key 'normal (eval map) "q" 'cider-popup-buffer-quit-function))
 
             (defun ap-cider-eval-defun-at-point-in-repl ()
