@@ -55,6 +55,7 @@
          ("y"   . sp-copy-sexp)
          ("p"   . evil-paste-after)
          ("P"   . evil-paste-before)
+         ("r"   . sp-raise-sexp)
          ("."   . sp-forward-slurp-sexp)
          (","   . sp-forward-barf-sexp)
          ("<"   . sp-backward-slurp-sexp)
