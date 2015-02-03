@@ -66,6 +66,7 @@
 
 (use-package zenburn-theme
   :ensure t
+  :disabled t
   :init (progn
           (load-theme 'zenburn 'no-confirm))
   :config (progn
@@ -75,6 +76,15 @@
             (set-face-attribute 'linum-relative-current-face nil :background "#49483e"
                                 :foreground "#e0cf9f"
                                 :weight 'bold)))
+
+(use-package gotham-theme
+  :ensure t
+  :init (progn
+          (load-theme 'gotham 'no-confirm))
+  :config (progn
+            (set-face-attribute 'fringe nil :background "#0c1014")
+            (set-face-attribute 'show-paren-match nil :background "#33859e"
+                                                      :foreground "#091f2e")))
 
 ;;; Modeline
 
