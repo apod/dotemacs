@@ -67,8 +67,7 @@
 (use-package zenburn-theme
   :ensure t
   :disabled t
-  :init (progn
-          (load-theme 'zenburn 'no-confirm))
+  :init (load-theme 'zenburn 'no-confirm)
   :config (progn
             (set-face-attribute 'mode-line nil :box nil)
             (set-face-attribute 'mode-line-inactive nil :box nil)
@@ -79,8 +78,7 @@
 
 (use-package gotham-theme
   :ensure t
-  :init (progn
-          (load-theme 'gotham 'no-confirm))
+  :init (load-theme 'gotham 'no-confirm)
   :config (progn
             (set-face-attribute 'fringe nil :background "#0c1014")
             (set-face-attribute 'show-paren-match nil :background "#33859e"
