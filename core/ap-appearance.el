@@ -84,6 +84,16 @@
             (set-face-attribute 'show-paren-match nil :background "#33859e"
                                                       :foreground "#091f2e")))
 
+(use-package leuven-theme
+  :ensure t
+  :disabled t
+  :init (load-theme 'leuven 'no-confirm)
+  :config (progn
+            (set-face-attribute 'fringe nil :background "#ffffff")
+            (set-face-attribute 'linum-relative-current-face nil :background "gray85"
+                                :foreground nil
+                                :weight 'bold)))
+
 ;;; Modeline
 
 ;; Show column number
