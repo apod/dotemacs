@@ -13,6 +13,8 @@
             "mr" 'cider-eval-region
             "mk" 'cider-load-buffer
             "mp" 'cider-eval-print-last-sexp
+            "mm" 'cider-macroexpand-1
+            "mM" 'cider-macroexpand-all
             "m`" 'ap-cider-eval-defun-at-point-in-repl
             "md" 'cider-doc))
 
