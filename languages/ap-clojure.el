@@ -15,7 +15,7 @@
             "mp" 'cider-eval-print-last-sexp
             "mm" 'cider-macroexpand-1
             "mM" 'cider-macroexpand-all
-            "m`" 'ap-cider-eval-defun-at-point-in-repl
+            "m`" 'ap-cider-eval-defun-at-point-or-region-in-repl
             "md" 'cider-doc))
 
 (use-package cider
@@ -32,9 +32,11 @@
             (evil-leader/set-key-for-mode 'cider-repl-mode
               "mz" 'cider-switch-to-last-clojure-buffer)
 
-            (defun ap-cider-eval-defun-at-point-in-repl ()
+            (defun ap-cider-eval-defun-at-point-or-region-in-repl ()
               (interactive)
-              (let ((form (cider-defun-at-point)))
+              (let ((form (if (region-active-p)
+                              (buffer-substring-no-properties (region-beginning) (region-end))
+                              (cider-defun-at-point))))
                 (while (string-match "\\`\s+\\|\n+\\'" form)
                   (setq form (replace-match "" t t form)))
                 (set-buffer (cider-current-repl-buffer))
