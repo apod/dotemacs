@@ -73,11 +73,12 @@
             (set-face-attribute 'mode-line-inactive nil :box nil)
             (set-face-attribute 'fringe nil :background "#3f3f3f")
             (set-face-attribute 'linum-relative-current-face nil :background "#49483e"
-                                :foreground "#e0cf9f"
-                                :weight 'bold)))
+                                                                 :foreground "#e0cf9f"
+                                                                 :weight 'bold)))
 
 (use-package gotham-theme
   :ensure t
+  :disabled t
   :init (load-theme 'gotham 'no-confirm)
   :config (progn
             (set-face-attribute 'fringe nil :background "#0c1014")
@@ -86,13 +87,13 @@
 
 (use-package leuven-theme
   :ensure t
-  :disabled t
   :init (load-theme 'leuven 'no-confirm)
   :config (progn
+            (setq evil-normal-state-cursor "#0FB300")
             (set-face-attribute 'fringe nil :background "#ffffff")
             (set-face-attribute 'linum-relative-current-face nil :background "gray85"
-                                :foreground nil
-                                :weight 'bold)))
+                                                                 :foreground nil
+                                                                 :weight 'bold)))
 
 ;;; Modeline
 
