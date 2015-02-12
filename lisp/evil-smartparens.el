@@ -26,8 +26,14 @@
       (deactivate-mark)
     (evil-normal-state)))
 
+(defun evil-smartparens--change-line ()
+  (interactive)
+  (sp-kill-hybrid-sexp nil)
+  (evil-insert-state))
+
 (evil-define-key 'normal evil-smartparens-mode-map
   "D" 'sp-kill-hybrid-sexp
+  "C" 'evil-smartparens--change-line
   "," 'evil-smartparens--enter-state)
 
 (define-key evil-smartparens-state-map [escape] 'evil-smartparens--exit-state)
