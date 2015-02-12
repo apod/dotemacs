@@ -12,7 +12,7 @@
             "me" 'cider-eval-last-sexp
             "mr" 'cider-eval-region
             "mk" 'cider-load-buffer
-            "mp" 'cider-eval-print-last-sexp
+            "mp" 'ap-cider-eval-defun-and-print
             "mm" 'cider-macroexpand-1
             "mM" 'cider-macroexpand-all
             "m`" 'ap-cider-eval-defun-at-point-or-region-in-repl
@@ -36,13 +36,36 @@
               (interactive)
               (let ((form (if (region-active-p)
                               (buffer-substring-no-properties (region-beginning) (region-end))
-                              (cider-defun-at-point))))
+                            (cider-defun-at-point))))
                 (while (string-match "\\`\s+\\|\n+\\'" form)
                   (setq form (replace-match "" t t form)))
                 (set-buffer (cider-current-repl-buffer))
                 (goto-char (point-max))
                 (insert form)
                 (cider-repl-return)))
+
+            (defun ap-cider-eval-print-handler (&optional buffer)
+              "Make a handler for evaluating and printing result in BUFFER."
+              (nrepl-make-response-handler (or buffer (current-buffer))
+                                           (lambda (buffer value)
+                                             (with-current-buffer buffer
+                                               (insert (format ";;=> %s\n" value))))
+                                           (lambda (_buffer out)
+                                             (cider-emit-interactive-eval-output out))
+                                           (lambda (_buffer err)
+                                             (cider-emit-interactive-eval-err-output err))
+                                           '()))
+
+            (defun ap-cider-eval-defun-and-print ()
+              (interactive)
+              (let ((form (cider-defun-at-point)))
+                (while (string-match "\\`\s+\\|\n+\\'" form)
+                  (setq form (replace-match "" t t form)))
+                (end-of-defun)
+                (unless (bolp)
+                  (newline))
+                (cider-interactive-eval form
+                                        (ap-cider-eval-print-handler))))
 
             (defadvice cider-last-sexp (around evil activate)
               "In normal-state, last sexp ends at point."
@@ -52,7 +75,5 @@
                     ad-do-it)
                 ad-do-it)))
   :pin melpa-stable)
-
-(require 'ap-cider-debug)
 
 (provide 'ap-clojure)
