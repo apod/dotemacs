@@ -30,10 +30,6 @@
   "D" 'sp-kill-hybrid-sexp
   "," 'evil-smartparens--enter-state)
 
-(evil-define-key 'normal evil-smartparens-mode-map
-  "D" 'sp-kill-hybrid-sexp
-  "," 'evil-smartparens--enter-state)
-
 (define-key evil-smartparens-state-map [escape] 'evil-smartparens--exit-state)
 (define-key evil-smartparens-state-map "," 'evil-smartparens--exit-state)
 
