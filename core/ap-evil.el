@@ -10,7 +10,7 @@
               (setq evil-want-C-u-scroll t)
               (setq-default evil-symbol-word-search t)
 
-              (when (not evil-normal-state-cursor)
+              (when (not (boundp 'evil-normal-state-cursor))
                 (setq evil-normal-state-cursor '("#f8f8f8" box)))
               (setq evil-emacs-state-cursor  '("cyan" box))
               (setq evil-insert-state-cursor '("#f92672"  (bar . 2)))
