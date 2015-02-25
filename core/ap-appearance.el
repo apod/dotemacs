@@ -87,12 +87,30 @@
 
 (use-package leuven-theme
   :ensure t
+  :disabled t
   :init (load-theme 'leuven 'no-confirm)
   :config (progn
             (setq evil-normal-state-cursor "#0FB300")
             (set-face-attribute 'fringe nil :background "#ffffff")
             (set-face-attribute 'linum-relative-current-face nil :background "gray85"
                                                                  :foreground nil
+                                                                 :weight 'bold)))
+
+(use-package solarized-theme
+  :ensure t
+  :init (progn
+          (setq solarized-high-contrast-mode-line nil
+                solarized-scale-org-headlines nil
+                solarized-height-minus-1 1.0
+                solarized-height-plus-1 1.0
+                solarized-height-plus-2 1.0
+                solarized-height-plus-3 1.0
+                solarized-height-plus-4 1.0)
+          (load-theme 'solarized-light 'no-confirm))
+  :config (progn
+            (setq evil-normal-state-cursor "#657b83")
+            (set-face-attribute 'linum-relative-current-face nil :background "#eee8d5"
+                                                                 :foreground "#839496"
                                                                  :weight 'bold)))
 
 ;;; Modeline
