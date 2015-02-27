@@ -44,6 +44,10 @@
 ;; Shell
 (evil-leader/set-key "!" 'shell-command)
 
+;; Smex
+(evil-leader/set-key "x" 'smex)
+(evil-leader/set-key "X" 'smex-major-mode-commands)
+
 ;; Files
 (evil-leader/set-key
   "ff" 'ido-find-file)
