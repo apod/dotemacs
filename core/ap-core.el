@@ -25,6 +25,9 @@
 ;; Don't set point position when you focus the frame
 (setq x-mouse-click-focus-ignore-position t)
 
+;; Disable mouse wheel scroll
+(mouse-wheel-mode -1)
+
 ;; Answer questions with y or n
 (defalias 'yes-or-no-p 'y-or-n-p)
 
