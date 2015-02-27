@@ -99,7 +99,7 @@
 (use-package solarized-theme
   :ensure t
   :init (progn
-          (setq solarized-high-contrast-mode-line nil
+          (setq solarized-use-variable-pitch nil
                 solarized-scale-org-headlines nil
                 solarized-height-minus-1 1.0
                 solarized-height-plus-1 1.0
