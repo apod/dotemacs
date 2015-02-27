@@ -20,6 +20,11 @@
 ;; Keybindings
 (bind-key* "H-h" 'ns-do-hide-emacs)
 (bind-key* "H-f" 'toggle-frame-fullscreen)
+;; Disable railwaycat's touchpad gestures
+(global-set-key [magnify-up] 'ignore)
+(global-set-key [magnify-down] 'ignore)
+(global-set-key [S-magnify-up] 'ignore)
+(global-set-key [S-magnify-down] 'ignore)
 
 ;; Disable beeping
 (setq ring-bell-function 'ignore)
