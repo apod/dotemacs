@@ -17,9 +17,15 @@
 ;; Option as super
 (setq mac-option-modifier 'super)
 
+(defun ap-toggle-fullscreen ()
+  "Toggle fullscreen"
+  (interactive)
+  (set-frame-parameter nil 'fullscreen (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
+
 ;; Keybindings
 (bind-key* "H-h" 'ns-do-hide-emacs)
-(bind-key* "H-f" 'toggle-frame-fullscreen)
+(bind-key* "H-f" 'ap-toggle-fullscreen)
+
 ;; Disable railwaycat's touchpad gestures
 (global-set-key [magnify-up] 'ignore)
 (global-set-key [magnify-down] 'ignore)
