@@ -9,7 +9,7 @@
   :init (exec-path-from-shell-initialize))
 
 ;; Fn key as Hyper
-(setq ns-function-modifier 'hyper)
+(setq mac-function-modifier 'hyper)
 
 ;; Command as meta
 (setq mac-command-modifier 'meta)
