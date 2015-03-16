@@ -92,8 +92,21 @@
                                                                  :foreground nil
                                                                  :weight 'bold)))
 
+(use-package gruvbox-theme
+  :ensure t
+  :init (progn
+          (load-theme 'gruvbox 'no-confirm)))
+
+(use-package noctilux-theme
+  :ensure t
+  :disabled t
+  :init (progn
+          (load-theme 'noctilux 'no-confirm)))
+
+
 (use-package solarized-theme
   :ensure t
+  :disabled t
   :init (progn
           (setq solarized-use-variable-pitch nil
                 solarized-scale-org-headlines nil
