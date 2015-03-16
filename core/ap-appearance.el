@@ -4,10 +4,6 @@
 ;; Disable blinking cursor
 (blink-cursor-mode -1)
 
-;; Show matching parens
-(use-package paren
-  :init (show-paren-mode t))
-
 ;; Frame title, format: "buffer_name (file_path) - invocation_name"
 (setq-default frame-title-format
               '(:eval (format "%s %s %s"

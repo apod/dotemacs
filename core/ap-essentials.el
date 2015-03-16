@@ -23,8 +23,11 @@
 (use-package smartparens
   :ensure t
   :diminish ""
-  :init (smartparens-global-mode t)
-  :config (require 'smartparens-config))
+  :init (progn (smartparens-global-mode t)
+               (show-smartparens-global-mode))
+  :config (progn (require 'smartparens-config)
+                 (setq sp-show-pair-delay 0)
+                 (setq sp-show-pair-from-inside t)))
 
 ;;; Expand-region
 (use-package expand-region
