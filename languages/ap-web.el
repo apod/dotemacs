@@ -6,7 +6,10 @@
   :mode (("\\.html\\'"       . web-mode)
          ("\\.handlebars\\'" . web-mode)
          ("\\.hbs\\'"        . web-mode)
-         ("\\.erb\\'"        . web-mode)))
+         ("\\.erb\\'"        . web-mode))
+  :config (setq web-mode-markup-indent-offset 2
+                web-mode-css-indent-offset    2
+                web-mode-code-indent-offset   2))
 
 (use-package css-mode
   :defer t
