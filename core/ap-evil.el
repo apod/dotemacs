@@ -6,39 +6,38 @@
 
 (use-package evil
   :ensure t
-  :pre-load (progn
-              (setq evil-want-C-u-scroll t)
-              (setq-default evil-symbol-word-search t)
-
-              (when (not (boundp 'evil-normal-state-cursor))
-                (setq evil-normal-state-cursor '("#f8f8f8" box)))
-              (setq evil-emacs-state-cursor  '("cyan" box))
-              (setq evil-insert-state-cursor '("#f92672"  (bar . 2)))
-              (setq evil-visual-state-cursor '("gray" (hbar . 2)))
-              (setq evil-motion-state-cursor '("plum3" box))
-              (setq evil-smartparens-state-cursor '("#f9647e" box)))
-  :init (evil-mode t))
+  :init (progn
+          (setq evil-want-C-u-scroll t)
+          (setq-default evil-symbol-word-search t)
+          (setq evil-normal-state-cursor '("#f8f8f8" box)
+                evil-emacs-state-cursor  '("cyan" box)
+                evil-insert-state-cursor '("#f92672"  (bar . 2))
+                evil-visual-state-cursor '("gray" (hbar . 2))
+                evil-motion-state-cursor '("plum3" box)
+                evil-smartparens-state-cursor '("#f9647e" box)))
+  :config (evil-mode t))
 
 (use-package evil-leader
   :ensure t
-  :init (global-evil-leader-mode t)
-  :config (evil-leader/set-leader "<SPC>"))
+  :config (progn
+            (evil-leader/set-leader "<SPC>")
+            (global-evil-leader-mode t)))
 
 (use-package evil-surround
   :ensure t
-  :init (global-evil-surround-mode t))
+  :config (global-evil-surround-mode t))
 
 (use-package evil-visualstar
   :ensure t
-  :init (global-evil-visualstar-mode t))
+  :config (global-evil-visualstar-mode t))
 
 (use-package evil-nerd-commenter
   :ensure t
-  :pre-load (setq evilnc-hotkey-comment-operator "gc"))
+  :init (setq evilnc-hotkey-comment-operator "gc"))
 
 (use-package evil-exchange
   :ensure t
-  :init (evil-exchange-install))
+  :config (evil-exchange-install))
 
 (use-package evil-smartparens
   :load-path "lisp/")

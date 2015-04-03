@@ -17,17 +17,15 @@
                                 "[no file]"))
                               (concat "- " invocation-name))))
 
-
 ;;; Line numbers
 
 (use-package linum
-  :init (add-hook 'prog-mode-hook 'linum-mode))
+  :config (add-hook 'prog-mode-hook 'linum-mode))
 
 (use-package linum-relative
   :ensure t
-  :config (setq linum-relative-current-symbol ""
-                linum-relative-format "%4s "))
-
+  :init (setq linum-relative-current-symbol ""
+              linum-relative-format "%4s "))
 
 ;;; Fonts
 

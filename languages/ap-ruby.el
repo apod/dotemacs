@@ -17,10 +17,10 @@
 (use-package rbenv
   :ensure t
   :defer t
-  :init (progn
-          (setq rbenv-show-active-ruby-in-modeline nil)
-          (global-rbenv-mode)
-          (add-hook 'enh-ruby-mode-hook 'rbenv-use-corresponding)))
+  :init (setq rbenv-show-active-ruby-in-modeline nil)
+  :config (progn
+            (global-rbenv-mode)
+            (add-hook 'enh-ruby-mode-hook 'rbenv-use-corresponding)))
 
 (use-package inf-ruby
   :ensure t
@@ -32,10 +32,11 @@
 (use-package robe
   :ensure t
   :defer t
-  :init (add-hook 'enh-ruby-mode-hook 'robe-mode)
-  :config (evil-leader/set-key-for-mode 'enh-ruby-mode
-            "md" 'robe-doc
-            "mz" 'robe-start))
+  :config (progn
+            (add-hook 'enh-ruby-mode-hook 'robe-mode)
+            (evil-leader/set-key-for-mode 'enh-ruby-mode
+              "md" 'robe-doc
+              "mz" 'robe-start)))
 
 (use-package slim-mode
   :ensure t

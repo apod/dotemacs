@@ -67,24 +67,24 @@
 
 ;; Meaningful names for buffers with the same name
 (use-package uniquify
-  :config (setq uniquify-buffer-name-style 'forward
-                uniquify-separator "/"
-                uniquify-ignore-buffers-re "^\\*"
-                uniquify-after-kill-buffer-p t))
+  :init (setq uniquify-buffer-name-style 'forward
+              uniquify-separator "/"
+              uniquify-ignore-buffers-re "^\\*"
+              uniquify-after-kill-buffer-p t))
 
 ;; Save last pointer position
 (use-package saveplace
-  :config (progn
-            (setq save-place-file (expand-file-name "saveplace" ap-data-directory))
-            (setq-default save-place t)))
+  :init (progn
+          (setq save-place-file (expand-file-name "saveplace" ap-data-directory))
+          (setq-default save-place t)))
 
 ;; Save minibuffer history
 (setq history-length 1000)
 
 (use-package savehist
-  :init (savehist-mode t)
-  :config (setq savehist-file (expand-file-name "savehist" ap-data-directory)
-                savehist-additional-variables '(search ring regexp-search-ring)
-                savehist-autosave-interval 60))
+  :init (setq savehist-file (expand-file-name "savehist" ap-data-directory)
+              savehist-additional-variables '(search ring regexp-search-ring)
+              savehist-autosave-interval 60)
+  :config (savehist-mode t))
 
 (provide 'ap-core)

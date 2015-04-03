@@ -9,9 +9,8 @@
   :bind (("C-c C-r" . lua-send-region)
          ("C-c C-e" . lua-send-current-line)
          ("C-M-x"   . lua-send-defun))
+  :init (setq lua-indent-level 2)
   :config (progn
-            (setq lua-indent-level 2)
-
             (evil-leader/set-key-for-mode 'lua-mode
               "ml" 'lua-send-buffer
               "mr" 'lua-send-current-region

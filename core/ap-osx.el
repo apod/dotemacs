@@ -6,7 +6,7 @@
 
 (use-package exec-path-from-shell
   :ensure t
-  :init (exec-path-from-shell-initialize))
+  :config (exec-path-from-shell-initialize))
 
 ;; Fn key as Hyper
 (setq mac-function-modifier 'hyper)
