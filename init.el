@@ -60,6 +60,7 @@
 (require 'ap-sml)
 (require 'ap-web)
 (require 'ap-markdown)
+(require 'ap-org)
 
 ;;; Final loads
 
