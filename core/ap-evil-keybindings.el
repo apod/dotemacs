@@ -49,8 +49,18 @@
 (evil-leader/set-key "X" 'smex-major-mode-commands)
 
 ;; Files
+(defun ido-find-file-org ()
+  (interactive)
+  (ido-find-file-in-dir "~/Dropbox/Org/"))
+
+(defun ido-find-file-emacs ()
+  (interactive)
+  (ido-find-file-in-dir "~/.emacs.d/"))
+
 (evil-leader/set-key
-  "ff" 'ido-find-file)
+  "ff" 'ido-find-file
+  "fe" 'ido-find-file-emacs
+  "fo" 'ido-find-file-org)
 
 ;; Buffers
 (evil-leader/set-key
