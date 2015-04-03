@@ -6,6 +6,7 @@
   :config (progn
             (add-hook 'clojure-mode-hook 'evil-smartparens-mode)
             (ap-set-key-for-modes (clojure-mode cider-clojure-interaction-mode)
+              "m-" 'cider-debug-defun-at-point
               "mi" 'ap-indent-defun
               "mj" 'cider-jack-in
               "mz" 'cider-switch-to-repl-buffer
