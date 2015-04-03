@@ -73,7 +73,6 @@
                   (progn
                     (unless (or (eobp) (eolp)) (forward-char))
                     ad-do-it)
-                ad-do-it)))
-  :pin melpa-stable)
+                ad-do-it))))
 
 (provide 'ap-clojure)
