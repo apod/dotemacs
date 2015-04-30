@@ -42,6 +42,7 @@
                   (setq form (replace-match "" t t form)))
                 (set-buffer (cider-current-repl-buffer))
                 (goto-char (point-max))
+                (cider-repl-delete-current-input)
                 (insert form)
                 (cider-repl-return)))
 
