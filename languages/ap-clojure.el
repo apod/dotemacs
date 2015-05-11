@@ -15,6 +15,7 @@
               "mr" 'cider-eval-region
               "mk" 'cider-load-buffer
               "mp" 'ap-cider-eval-defun-and-print
+              "mP" 'ap-cider-eval-last-sexp-and-print
               "mm" 'cider-macroexpand-1
               "mM" 'cider-macroexpand-all
               "m`" 'ap-cider-eval-defun-at-point-or-region-in-repl
@@ -63,6 +64,14 @@
                 (while (string-match "\\`\s+\\|\n+\\'" form)
                   (setq form (replace-match "" t t form)))
                 (end-of-defun)
+                (unless (bolp)
+                  (newline))
+                (cider-interactive-eval form
+                                        (ap-cider-eval-print-handler))))
+
+            (defun ap-cider-eval-last-sexp-and-print ()
+              (interactive)
+              (let ((form (cider-last-sexp)))
                 (unless (bolp)
                   (newline))
                 (cider-interactive-eval form
