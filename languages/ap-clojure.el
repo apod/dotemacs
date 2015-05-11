@@ -24,7 +24,6 @@
   :ensure t
   :init (setq nrepl-hide-special-buffers t
               cider-repl-pop-to-buffer-on-connect nil
-              cider-show-error-buffer 'only-in-repl
               cider-repl-history-file (expand-file-name "cider-repl-history" ap-data-directory))
   :config (progn
             (add-hook 'cider-mode-hook 'eldoc-mode)
