@@ -19,6 +19,7 @@
               "mm" 'cider-macroexpand-1
               "mM" 'cider-macroexpand-all
               "m`" 'ap-cider-eval-defun-at-point-or-region-in-repl
+              "m5" 'ap-cider-eval-refresh-in-repl
               "md" 'cider-doc)))
 
 (use-package cider
@@ -32,6 +33,14 @@
 
             (evil-leader/set-key-for-mode 'cider-repl-mode
               "mz" 'cider-switch-to-last-clojure-buffer)
+
+            (defun ap-cider-eval-refresh-in-repl ()
+              (interactive)
+              (set-buffer (cider-current-repl-buffer))
+              (goto-char (point-max))
+              (cider-repl-delete-current-input)
+              (insert "(reloaded.repl/reset)")
+              (cider-repl-return))
 
             (defun ap-cider-eval-defun-at-point-or-region-in-repl ()
               (interactive)
