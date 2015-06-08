@@ -41,6 +41,11 @@
   :ensure t
   :bind ("C-x 1" . zygospore-toggle-delete-other-windows))
 
+;;; Perspective
+(use-package perspective
+  :ensure t
+  :config (persp-mode))
+
 ;;; Eldoc
 (use-package eldoc-mode
   :diminish eldoc-mode)
