@@ -58,4 +58,11 @@
             (let ((comint-buffer-maximum-size 0))
               (comint-truncate-buffer))))
 
+;;; Ace-window
+(use-package ace-window
+  :ensure t
+  :bind ("C-x o" . ace-window)
+  :config (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l)
+                aw-background nil))
+
 (provide 'ap-essentials)
