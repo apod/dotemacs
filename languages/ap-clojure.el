@@ -18,6 +18,7 @@
               "mP" 'ap-cider-eval-last-sexp-and-print
               "mm" 'cider-macroexpand-1
               "mM" 'cider-macroexpand-all
+              "mn" 'clojure-insert-ns-form
               "m`" 'ap-cider-eval-defun-at-point-or-region-in-repl
               "m5" 'ap-cider-eval-refresh-in-repl
               "md" 'cider-doc)))
