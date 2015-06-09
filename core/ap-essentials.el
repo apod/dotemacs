@@ -44,7 +44,11 @@
 ;;; Perspective
 (use-package perspective
   :ensure t
-  :config (persp-mode))
+  :config (progn
+            (set-face-attribute 'persp-selected-face nil :background nil
+                                                         :foreground "#b8bb26"
+                                                         :weight 'bold)
+            (persp-mode)))
 
 ;;; Eldoc
 (use-package eldoc-mode
@@ -69,6 +73,13 @@
 (use-package hydra
   :ensure t
   :config (progn
+            (set-face-attribute 'hydra-face-red  nil :background nil
+                                                     :foreground "#fb4933"
+                                                     :bold 'bold)
+            (set-face-attribute 'hydra-face-blue nil :background nil
+                                                     :foreground "#458588"
+                                                     :weight 'bold)
+
             (defhydra hydra-frame (:color blue
                                    :hint nil)
               "
