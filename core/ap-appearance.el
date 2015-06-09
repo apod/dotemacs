@@ -42,6 +42,13 @@
 
 (use-package gruvbox-theme
   :ensure t
+  :init (progn
+          (set-face-attribute 'hydra-face-red nil :background nil
+                                                  :foreground "#fb4933"
+                                                  :bold 'bold)
+          (set-face-attribute 'hydra-face-blue nil :background nil
+                                                   :foreground "#458588"
+                                                   :weight 'bold))
   :config (load-theme 'gruvbox 'no-confirm))
 
 ;;; Modeline

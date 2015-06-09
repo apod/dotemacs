@@ -71,17 +71,7 @@
 
 ;; Windows
 (evil-leader/set-key
-  "ww" 'other-window
-  "wj" 'evil-window-down
-  "wk" 'evil-window-up
-  "wl" 'evil-window-right
-  "wh" 'evil-window-left
-  "wq" 'delete-window
-  "ws" 'ap-split-window-vertically-and-focus
-  "wS" 'split-window-vertically
-  "wv" 'ap-split-window-horizontally-and-focus
-  "wV" 'split-window-horizontally
-  "wz" 'zygospore-toggle-delete-other-windows)
+  "w" 'hydra-window/body)
 
 ;; Narrowing
 (evil-leader/set-key
