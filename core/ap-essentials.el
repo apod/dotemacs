@@ -69,6 +69,14 @@
   :config (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l)
                 aw-background nil))
 
+;;; Popwin
+(use-package popwin
+  :ensure t
+  :config (progn
+            (push '(cider-repl-mode) popwin:special-display-config)
+            (push '("*cider-error*" :width 0.5 :position right) popwin:special-display-config)
+            (popwin-mode t)))
+
 ;;; Hydra
 (use-package hydra
   :ensure t
@@ -92,6 +100,18 @@
               ("f" other-frame)
               ("q" nil))
 
+            (defhydra hydra-popwin (:color blue
+                                   :hint nil)
+              "
+   Popwin
+  ───────────────────────────────
+   [_b_] popup-buffer [_s_] stick-popup [_d_] close-popup
+  ─────────────────────────────── "
+              ("s" popwin:stick-popup-window)
+              ("d" popwin:close-popup-window)
+              ("b" popwin:popup-buffer)
+              ("q" nil))
+
             (defhydra hydra-window (:color blue
                                     :idle 0.5
                                     :hint nil)
@@ -99,7 +119,7 @@
    Navigation   Resize      Split              Windows                   Other
   ─────────────────────────────────────────────
        ^_k_^            ^_K_^       [_v_] vert & focus   [_w_] ace-window            [_f_] Frames
-       ^^↑^^            ^^↑^^       [_s_] horz & focus   [_m_] ace-swap-window
+       ^^↑^^            ^^↑^^       [_s_] horz & focus   [_m_] ace-swap-window       [_p_] Popwin
    _h_ ←   → _l_    _H_ ←   → _L_   [_V_] vert           [_d_] ace-delete-window
        ^^↓^^            ^^↓^^       [_S_] horz           [_q_] delete-window
        ^_j_^            ^_J_^       ^^                   [_z_] zoom/unzoom
@@ -122,6 +142,7 @@
               ("V" split-window-horizontally)
               ("z" zygospore-toggle-delete-other-windows)
               ("f" hydra-frame/body)
+              ("p" hydra-popwin/body)
               ("q" delete-window))))
 
 (provide 'ap-essentials)
