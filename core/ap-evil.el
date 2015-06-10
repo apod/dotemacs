@@ -4,12 +4,6 @@
 (use-package undo-tree
   :diminish "")
 
-(use-package evil-leader
-  :ensure t
-  :config (progn
-            (evil-leader/set-leader "<SPC>")
-            (global-evil-leader-mode t)))
-
 (use-package evil
   :ensure t
   :init (progn
@@ -21,7 +15,13 @@
                 evil-visual-state-cursor '("gray" (hbar . 2))
                 evil-motion-state-cursor '("plum3" box)
                 evil-smartparens-state-cursor '("#f9647e" box)))
-  :config (evil-mode t))
+  :config (progn
+            (use-package evil-leader
+              :ensure t
+              :config (progn
+                        (evil-leader/set-leader "<SPC>")
+                        (global-evil-leader-mode t)))
+            (evil-mode t)))
 
 (use-package evil-surround
   :ensure t
