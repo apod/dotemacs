@@ -72,10 +72,7 @@
 ;;; Popwin
 (use-package popwin
   :ensure t
-  :config (progn
-            (push '(cider-repl-mode) popwin:special-display-config)
-            (push '("*cider-error*" :width 0.5 :position right) popwin:special-display-config)
-            (popwin-mode t)))
+  :config (popwin-mode t))
 
 ;;; Hydra
 (use-package hydra

@@ -25,9 +25,13 @@
 
 (use-package cider
   :ensure t
-  :init (setq nrepl-hide-special-buffers t
-              cider-repl-pop-to-buffer-on-connect nil
-              cider-repl-history-file (expand-file-name "cider-repl-history" ap-data-directory))
+  :init (progn
+          (push '(cider-repl-mode :stick t) popwin:special-display-config)
+          (push '("*cider-error*" :width 0.5 :position right) popwin:special-display-config)
+
+          (setq nrepl-hide-special-buffers t
+                cider-repl-pop-to-buffer-on-connect nil
+                cider-repl-history-file (expand-file-name "cider-repl-history" ap-data-directory)))
   :config (progn
             (add-hook 'cider-mode-hook 'eldoc-mode)
             (add-hook 'cider-repl-mode-hook 'evil-smartparens-mode)
