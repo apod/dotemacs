@@ -99,6 +99,21 @@ narrowed."
       (shrink-window arg)
     (enlarge-window arg)))
 
+;; Other commands
+(defun ap-run-curl-command ()
+  (interactive)
+  (let ((command (if (region-active-p)
+                     (buffer-substring-no-properties (region-beginning) (region-end))
+                   (buffer-substring-no-properties (line-beginning-position) (line-beginning-position 2))))
+        (curl "curl -s ")
+        (the-buf (get-buffer-create "*CURL*")))
+    (with-current-buffer the-buf
+      (erase-buffer)
+      (js-mode)
+      (insert (shell-command-to-string (concat curl command)))
+      (json-pretty-print-buffer))
+    (pop-to-buffer the-buf)))
+
 ;;; Macros
 (defmacro ap-set-key-for-modes (modes key def &rest bindings)
   "Define evil leader key bindings for multiple major modes"
