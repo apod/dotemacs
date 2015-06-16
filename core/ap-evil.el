@@ -33,7 +33,9 @@
 
 (use-package evil-nerd-commenter
   :ensure t
-  :init (setq evilnc-hotkey-comment-operator "gc"))
+  :config (progn
+            (bind-key "gc" 'evilnc-comment-operator  evil-normal-state-map)
+            (bind-key "gc" 'evilnc-comment-operator  evil-visual-state-map)))
 
 (use-package evil-exchange
   :ensure t
