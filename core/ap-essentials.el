@@ -142,4 +142,9 @@
               ("p" hydra-popwin/body)
               ("q" delete-window))))
 
+;;; Company
+(use-package company
+  :ensure t
+  :config (setq company-tooltip-align-annotations t))
+
 (provide 'ap-essentials)
