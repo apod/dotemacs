@@ -69,7 +69,9 @@
                                            (lambda (buffer out)
                                              (with-current-buffer buffer
                                                (insert (format ";; %s" out))))
-                                           (lambda (_buffer err)
+                                           (lambda (buffer err)
+                                             (with-current-buffer buffer
+                                               (insert (format ";; %s" err)))
                                              (cider-emit-interactive-eval-err-output err))
                                            '()))
 
