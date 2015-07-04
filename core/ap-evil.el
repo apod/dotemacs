@@ -16,6 +16,9 @@
                 evil-motion-state-cursor '("plum3" box)
                 evil-smartparens-state-cursor '("#f9647e" box)))
   :config (progn
+            (add-to-list 'evil-emacs-state-modes 'magit-popup-mode)
+            (add-to-list 'evil-emacs-state-modes 'magit-popup-sequence-mode)
+
             (use-package evil-leader
               :ensure t
               :config (progn
