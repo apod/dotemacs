@@ -12,8 +12,7 @@
 
 ;;; Magit
 (use-package magit
-  :ensure t
-  :init (setq magit-last-seen-setup-instructions "1.4.0"))
+  :ensure t)
 
 ;;; Rainbow delimiters
 (use-package rainbow-delimiters
