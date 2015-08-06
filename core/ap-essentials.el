@@ -24,7 +24,7 @@
   :ensure t
   :diminish ""
   :config (progn
-            (require 'smartparens-config)
+            (use-package smartparens-config)
 
             (setq sp-show-pair-delay 0
                   sp-show-pair-from-inside t)
