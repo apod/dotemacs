@@ -58,6 +58,7 @@
 (require 'ap-lua)
 (require 'ap-ruby)
 (require 'ap-sml)
+(require 'ap-ocaml)
 (require 'ap-web)
 (require 'ap-markdown)
 (require 'ap-org)
