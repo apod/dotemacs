@@ -47,6 +47,14 @@
   :ensure t
   :config (load-theme 'gruvbox 'no-confirm))
 
+(use-package dracula-theme
+  :ensure t
+  :disabled t
+  :config (progn (load-theme 'dracula 'no-confirm)
+                 (set-face-attribute 'linum-relative-current-face nil :background "#373844"
+                                                                      :foreground "#6272a4"
+                                                                      :weight 'bold)))
+
 ;;; Modeline
 
 ;; Show column number
