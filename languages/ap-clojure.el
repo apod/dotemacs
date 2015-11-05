@@ -102,4 +102,29 @@
                     ad-do-it)
                 ad-do-it))))
 
+(use-package clj-refactor
+  :ensure t
+  :init (progn
+          (defun ap-clj-refactor ()
+            (setq cljr-favor-private-functions nil)
+            (clj-refactor-mode t)
+
+            (ap-set-key-for-modes (clojure-mode cider-clojure-interaction-mode)
+              "rh" 'hydra-cljr-help-menu/body
+              "rrs" 'cljr-rename-symbol
+              "rfu" 'cljr-find-usages
+              "ril" 'cljr-introduce-let
+              "rel" 'cljr-expand-let
+              "rml" 'cljr-move-to-let
+              "rrl" 'cljr-remove-let
+              "rsn" 'cljr-sort-ns
+              "rtf" 'cljr-thread-first-all
+              "rtl" 'cljr-thread-last-all
+              "ru"  'cljr-unwind
+              "rU"  'cljr-unwind-all
+              "ref" 'cljr-extract-function
+              "rsp" 'cljr-sort-project-dependencies))
+
+          (add-hook 'clojure-mode-hook 'ap-clj-refactor)))
+
 (provide 'ap-clojure)
