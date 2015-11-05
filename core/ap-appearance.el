@@ -25,7 +25,10 @@
 (use-package linum-relative
   :ensure t
   :init (setq linum-relative-current-symbol ""
-              linum-relative-format "%4s "))
+              linum-relative-format "%4s ")
+  :config (linum-relative-on))
+
+
 
 ;;; Fonts
 
