@@ -94,7 +94,7 @@
              `((ap-evil-state :face highlight-face)
                (ap-projectile :face other-face)
                (ap-vc :fallback version-control :face default-face)
-               (ap-buffer))
+               (ap-buffer :face line-face))
 
              `((major-mode :face other-face)
                (((minor-modes :separator spaceline-minor-modes-separator)
