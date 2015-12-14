@@ -22,18 +22,18 @@
                          (spaceline-evil-visual  "#fe8019")
                          (spaceline-evil-motion  "#d3869b")))
               (set-face-attribute (nth 0 s) nil :background (nth 1 s)
-                                  :foreground "#2c2827"))
+                                                :foreground "#2c2827"))
 
             ;; Add a custom face for smartparens state
-            (defface spaceline-evil-smartparens
+            (defface ap-spaceline-evil-smartparens
               `((t (:background "#f9647e"
-                                :foreground "#2c2827"
-                                :inherit 'mode-line)))
+                    :foreground "#2c2827"
+                    :inherit 'mode-line)))
               "Evil smartparens state face."
               :group 'spaceline)
 
             (add-to-list 'spaceline-evil-state-faces
-                         '(smartparens . spaceline-evil-smartparens))
+                         '(smartparens . ap-spaceline-evil-smartparens))
 
             ;; Change mode-line face depending on state
             (setq spaceline-highlight-face-func
@@ -67,12 +67,34 @@
               "The current line and column numbers."
               "%2l:%2c")
 
+            ;; Buffer with modified faces
+            (defface ap-spaceline-modified
+              `((t (:foreground "#83a598"
+                    :inherit 'mode-line)))
+              "Spaceline buffer modified."
+              :group 'spaceline)
+
+            (defface ap-spaceline-read-only
+              `((t (:foreground "#d3869b"
+                    :inherit 'mode-line)))
+              "Spaceline buffer modified."
+              :group 'spaceline)
+
+            (spaceline-define-segment ap-buffer
+              "Name of buffer with modified faces"
+              (powerline-buffer-id
+               (cond
+                ((not active)        'mode-line-inactive)
+                (buffer-read-only    'ap-spaceline-read-only)
+                ((buffer-modified-p) 'ap-spaceline-modified)
+                (t                   'mode-line))))
+
             ;; Setup mode-line segments
             (spaceline-install
              `((ap-evil-state :face highlight-face)
                (ap-projectile :face other-face)
                (ap-vc :fallback version-control :face default-face)
-               ((buffer-id buffer-modified) :face default-face))
+               (ap-buffer))
 
              `((major-mode :face other-face)
                (((minor-modes :separator spaceline-minor-modes-separator)
