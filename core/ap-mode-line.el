@@ -16,10 +16,17 @@
                 (propertize state 'face 'bold))
               :when (bound-and-true-p evil-local-mode))
 
+            (diminish 'projectile-mode)
+            (spaceline-define-segment ap-projectile
+              (projectile-project-name)
+              :when (and (functionp 'projectile-project-name)
+                         (not (string= (projectile-project-name) "-"))))
+
             (spaceline-install
              `((ap-evil-state :face highlight-face)
                (buffer-id
                 buffer-modified)
+               (ap-projectile :when active)
                (version-control :when active))
 
              `(major-mode
