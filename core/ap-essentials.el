@@ -10,8 +10,14 @@
               (expand-file-name "projectile-bookmarks.eld" ap-data-directory))
   :config (projectile-global-mode t))
 
-;;; Magit
+;;; Git packages
 (use-package magit
+  :ensure t)
+
+(use-package gitconfig-mode
+  :ensure t)
+
+(use-package gitignore-mode
   :ensure t)
 
 ;;; Rainbow delimiters
