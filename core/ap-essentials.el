@@ -4,6 +4,7 @@
 ;;; Projectile
 (use-package projectile
   :ensure t
+  :diminish projectile-mode
   :init (setq projectile-cache-file
               (expand-file-name "projectile.cache" ap-data-directory)
               projectile-known-projects-file
