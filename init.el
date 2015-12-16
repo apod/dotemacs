@@ -45,6 +45,7 @@
 (when (eq system-type 'darwin)
   (require 'ap-osx))
 (require 'ap-appearance)
+(require 'ap-mode-line)
 (require 'ap-defuns)
 (require 'ap-essentials)
 (require 'ap-evil)
