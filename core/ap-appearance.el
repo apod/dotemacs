@@ -56,6 +56,27 @@
                                                                       :weight 'bold)))
 
 ;;; Modeline
+(use-package spaceline
+  :ensure t
+  :config (progn
+            (setq powerline-default-separator 'bar)
+            (setq spaceline-highlight-face-func 'spaceline-highlight-face-evil-state)
+
+            (require 'spaceline-segments)
+            (spaceline-install
+             `((evil-state :face highlight-face)
+               buffer-id
+               (version-control :when active))
+
+             `(major-mode
+               (((minor-modes :separator spaceline-minor-modes-separator)
+                 process)
+                :when active)
+               selection-info
+               ((point-position
+                 line-column)
+                :face highlight-face)))))
+
 
 ;; Show column number
 (column-number-mode t)
