@@ -49,6 +49,7 @@
 ;;; Perspective
 (use-package perspective
   :ensure t
+  :disabled t
   :config (progn
             (set-face-attribute 'persp-selected-face nil :background nil
                                                          :foreground "#b8bb26"
