@@ -23,13 +23,14 @@
               :when (and (functionp 'projectile-project-name)
                          (not (string= (projectile-project-name) "-"))))
 
-            (spaceline-define-segment ap-git-branch
-              "Current git branch."
-              (or (magit-get-current-branch)
-                  (magit-rev-parse "--short" "HEAD"))
+            ;; Update vc info every auto-revert-interval
+            (setq auto-revert-check-vc-info t)
+
+            (spaceline-define-segment ap-vc
+              "Current branch."
+              (substring-no-properties vc-mode 5)
               :when (and vc-mode
-                         (string= (vc-backend (buffer-file-name (current-buffer))) "Git")
-                         (functionp 'magit-get-current-branch)))
+                         (string= (vc-backend (buffer-file-name (current-buffer))) "Git")))
 
             (spaceline-define-segment ap-line-column
               "The current line and column numbers."
@@ -39,15 +40,13 @@
              `((ap-evil-state :face highlight-face)
                (buffer-id
                 buffer-modified)
-               (ap-projectile :when active)
-               (ap-git-branch :when active
-                              :fallback version-control))
+               (ap-projectile)
+               (ap-vc :fallback version-control))
 
              `(major-mode
                (((minor-modes :separator spaceline-minor-modes-separator)
                  process)
                 :when active)
-               buffer-encoding-abbrev
                ((selection-info
                  ap-line-column)
                 :face highlight-face)))))
