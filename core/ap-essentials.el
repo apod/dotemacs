@@ -7,7 +7,10 @@
   :init (setq projectile-cache-file
               (expand-file-name "projectile.cache" ap-data-directory)
               projectile-known-projects-file
-              (expand-file-name "projectile-bookmarks.eld" ap-data-directory))
+              (expand-file-name "projectile-bookmarks.eld" ap-data-directory)
+              projectile-mode-line '(:eval
+                                     (format " P[%s]"
+                                             (projectile-project-name))))
   :config (projectile-global-mode t))
 
 ;;; Git packages
