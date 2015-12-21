@@ -19,6 +19,9 @@
 ;; Revert buffer if the file was changed
 (global-auto-revert-mode t)
 
+;; Update vc info every auto-revert-interval
+(setq auto-revert-check-vc-info t)
+
 ;; Delete selection on key press
 (delete-selection-mode t)
 
