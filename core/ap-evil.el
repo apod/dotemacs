@@ -9,11 +9,12 @@
   :init (progn
           (setq evil-want-C-u-scroll t)
           (setq-default evil-symbol-word-search t)
-          (setq evil-normal-state-cursor '("#f8f8f8" box)
-                evil-emacs-state-cursor  '("cyan" box)
-                evil-insert-state-cursor '("#f92672"  (bar . 2))
-                evil-visual-state-cursor '("gray" (hbar . 2))
-                evil-motion-state-cursor '("plum3" box)
+          (setq evil-normal-state-cursor '("#a89984" box)
+                evil-emacs-state-cursor  '("#fbf1c7" box)
+                evil-insert-state-cursor '("#83a598"  (bar . 2))
+                evil-replace-state-cursor '("#8ec07c"  (bar . 2))
+                evil-visual-state-cursor '("#fe8019" (hbar . 2))
+                evil-motion-state-cursor '("#d3869b" box)
                 evil-smartparens-state-cursor '("#f9647e" box)))
   :config (progn
             (add-to-list 'evil-emacs-state-modes 'magit-popup-mode)
