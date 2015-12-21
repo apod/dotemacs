@@ -5,6 +5,7 @@
   :ensure t
   :config (progn
             (setq powerline-default-separator 'box)
+
             (dolist (s '((spaceline-evil-normal  "#a89984")
                          (spaceline-evil-insert  "#83a598")
                          (spaceline-evil-emacs   "#fbf1c7")
@@ -13,6 +14,14 @@
                          (spaceline-evil-motion  "#d3869b")))
               (set-face-attribute (nth 0 s) nil :background (nth 1 s)
                                                 :foreground "#2c2827"))
+            (defface spaceline-evil-smartparens
+              `((t (:background "#f9647e"
+                    :foreground "#2c2827"
+                    :inherit 'mode-line)))
+              "Evil smartparens state face."
+              :group 'spaceline)
+
+            (add-to-list 'spaceline-evil-state-faces '(smartparens . spaceline-evil-smartparens))
 
             (setq spaceline-highlight-face-func 'spaceline-highlight-face-evil-state)
 
