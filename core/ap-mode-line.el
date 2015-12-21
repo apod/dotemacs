@@ -6,6 +6,15 @@
   :config (progn
             (setq powerline-default-separator 'box)
 
+            (dolist (s '((powerline-active1 "#504945" "#a89984")
+                         (powerline-active2 "#3c3836" "#a89984")
+                         (mode-line "#3c3836" "#f2dbae")
+                         (powerline-inactive1 "#282828" "#a89984")
+                         (powerline-inactive2 "#282828" "#a89984")
+                         (mode-line-inactive "#282828" "#a89984")))
+              (set-face-attribute (nth 0 s) nil :background (nth 1 s)
+                                                :foreground (nth 2 s)))
+            ;; Spaceline state faces
             (dolist (s '((spaceline-evil-normal  "#a89984")
                          (spaceline-evil-insert  "#83a598")
                          (spaceline-evil-emacs   "#fbf1c7")
@@ -14,6 +23,8 @@
                          (spaceline-evil-motion  "#d3869b")))
               (set-face-attribute (nth 0 s) nil :background (nth 1 s)
                                   :foreground "#2c2827"))
+
+            ;; Add a custom face for smartparens state
             (defface spaceline-evil-smartparens
               `((t (:background "#f9647e"
                                 :foreground "#2c2827"
@@ -21,23 +32,15 @@
               "Evil smartparens state face."
               :group 'spaceline)
 
-            (add-to-list 'spaceline-evil-state-faces '(smartparens . spaceline-evil-smartparens))
-            (setq spaceline-highlight-face-func 'spaceline-highlight-face-evil-state)
+            (add-to-list 'spaceline-evil-state-faces
+                         '(smartparens . spaceline-evil-smartparens))
 
-            (set-face-attribute 'powerline-active1 nil :background "#504945"
-                                                       :foreground "#a89984")
-            (set-face-attribute 'powerline-active2 nil :background "#3c3836"
-                                                       :foreground "#a89984")
-            (set-face-attribute 'mode-line nil :background "#3c3836"
-                                               :foreground "#f2dbae")
-            (set-face-attribute 'powerline-inactive1 nil :background "#1d2021"
-                                                         :foreground "#a89984")
-            (set-face-attribute 'powerline-inactive2 nil :background "#1d2021"
-                                                         :foreground "#a89984")
-            (set-face-attribute 'mode-line-inactive nil :background "#1d2021"
-                                                        :foreground "#a89984")
+            ;; Change mode-line face depending on state
+            (setq spaceline-highlight-face-func
+                  'spaceline-highlight-face-evil-state)
+
+            ;; Custom spaceline segments
             (require 'spaceline-segments)
-
             (spaceline-define-segment ap-evil-state
               "The current evil state, without the tag brackets."
               (let ((state
@@ -53,8 +56,6 @@
               :when (and (functionp 'projectile-project-name)
                          (not (string= (projectile-project-name) "-"))))
 
-            ;; Update vc info every auto-revert-interval
-            (setq auto-revert-check-vc-info t)
 
             (spaceline-define-segment ap-vc
               "Current branch."
@@ -66,6 +67,7 @@
               "The current line and column numbers."
               "%2l:%2c")
 
+            ;; Setup mode-line segments
             (spaceline-install
              `((ap-evil-state :face highlight-face)
                (ap-projectile :face other-face)
