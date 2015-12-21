@@ -4,9 +4,30 @@
 (use-package spaceline
   :ensure t
   :config (progn
-            (setq powerline-default-separator 'bar)
+            (setq powerline-default-separator 'box)
+            (dolist (s '((spaceline-evil-normal  "#a89984")
+                         (spaceline-evil-insert  "#83a598")
+                         (spaceline-evil-emacs   "#fbf1c7")
+                         (spaceline-evil-replace "#8ec07c")
+                         (spaceline-evil-visual  "#fe8019")
+                         (spaceline-evil-motion  "#d3869b")))
+              (set-face-attribute (nth 0 s) nil :background (nth 1 s)
+                                                :foreground "#2c2827"))
+
             (setq spaceline-highlight-face-func 'spaceline-highlight-face-evil-state)
 
+            (set-face-attribute 'powerline-active1 nil :background "#504945"
+                                                       :foreground "#a89984")
+            (set-face-attribute 'powerline-active2 nil :background "#3c3836"
+                                                       :foreground "#a89984")
+            (set-face-attribute 'mode-line nil :background "#3c3836"
+                                               :foreground "#a89984")
+            (set-face-attribute 'powerline-inactive1 nil :background "#1d2021"
+                                                         :foreground "#a89984")
+            (set-face-attribute 'powerline-inactive2 nil :background "#1d2021"
+                                                         :foreground "#a89984")
+            (set-face-attribute 'mode-line-inactive nil :background "#1d2021"
+                                                        :foreground "#a89984")
             (require 'spaceline-segments)
             (spaceline-define-segment ap-evil-state
               "The current evil state, without the tag brackets."
@@ -38,8 +59,8 @@
 
             (spaceline-install
              `((ap-evil-state :face highlight-face)
-               (buffer-id
-                buffer-modified)
+               ((buffer-id
+                 buffer-modified))
                (ap-projectile)
                (ap-vc :fallback version-control))
 
