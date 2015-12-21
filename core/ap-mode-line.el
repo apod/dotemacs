@@ -13,16 +13,15 @@
                          (spaceline-evil-visual  "#fe8019")
                          (spaceline-evil-motion  "#d3869b")))
               (set-face-attribute (nth 0 s) nil :background (nth 1 s)
-                                                :foreground "#2c2827"))
+                                  :foreground "#2c2827"))
             (defface spaceline-evil-smartparens
               `((t (:background "#f9647e"
-                    :foreground "#2c2827"
-                    :inherit 'mode-line)))
+                                :foreground "#2c2827"
+                                :inherit 'mode-line)))
               "Evil smartparens state face."
               :group 'spaceline)
 
             (add-to-list 'spaceline-evil-state-faces '(smartparens . spaceline-evil-smartparens))
-
             (setq spaceline-highlight-face-func 'spaceline-highlight-face-evil-state)
 
             (set-face-attribute 'powerline-active1 nil :background "#504945"
@@ -30,7 +29,7 @@
             (set-face-attribute 'powerline-active2 nil :background "#3c3836"
                                                        :foreground "#a89984")
             (set-face-attribute 'mode-line nil :background "#3c3836"
-                                               :foreground "#a89984")
+                                               :foreground "#f2dbae")
             (set-face-attribute 'powerline-inactive1 nil :background "#1d2021"
                                                          :foreground "#a89984")
             (set-face-attribute 'powerline-inactive2 nil :background "#1d2021"
@@ -38,6 +37,7 @@
             (set-face-attribute 'mode-line-inactive nil :background "#1d2021"
                                                         :foreground "#a89984")
             (require 'spaceline-segments)
+
             (spaceline-define-segment ap-evil-state
               "The current evil state, without the tag brackets."
               (let ((state
@@ -68,15 +68,15 @@
 
             (spaceline-install
              `((ap-evil-state :face highlight-face)
-               ((buffer-id
-                 buffer-modified))
-               (ap-projectile)
-               (ap-vc :fallback version-control))
+               (ap-projectile :face other-face)
+               (ap-vc :fallback version-control :face default-face)
+               ((buffer-id buffer-modified) :face default-face))
 
-             `(major-mode
+             `((major-mode :face other-face)
                (((minor-modes :separator spaceline-minor-modes-separator)
                  process)
-                :when active)
+                :when active
+                :face other-face)
                ((selection-info
                  ap-line-column)
                 :face highlight-face)))))
