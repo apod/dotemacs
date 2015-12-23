@@ -4,8 +4,6 @@
 (use-package sml-mode
   :ensure t
   :defer t
-  :bind (("C-c C-r" . ap-sml-send-region-or-line)
-         ("C-c C-k" . ap-sml-kill-and-load-file))
   :mode ("\\.sml\\'" . sml-mode)
   :config (progn
             (defun ap-sml-send-region-or-line ()
@@ -24,9 +22,11 @@
                 (delete-process "*sml*"))
               (sml-prog-proc-load-file file)
               (other-window 1))
+
             (bind-keys :map sml-mode-map
                        ("C-c C-r" . ap-sml-send-region-or-line)
                        ("C-c C-k" . ap-sml-kill-and-load-file))
+
             (evil-leader/set-key-for-mode 'sml-mode
               "mr" 'ap-sml-send-region-or-line
               "mk" 'ap-sml-kill-and-load-file

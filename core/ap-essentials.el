@@ -66,11 +66,14 @@
 
 ;;; Comint
 (use-package comint
-  :bind ("C-c M-o" . ap-comint-clear-buffer)
-  :config (defun ap-comint-clear-buffer ()
-            (interactive)
-            (let ((comint-buffer-maximum-size 0))
-              (comint-truncate-buffer))))
+  :config (progn
+            (defun ap-comint-clear-buffer ()
+              (interactive)
+              (let ((comint-buffer-maximum-size 0))
+                (comint-truncate-buffer)))
+
+            (bind-keys :map comint-mode-map
+                       ("C-c M-o" . ap-comint-clear-buffer))))
 
 ;;; Ace-window
 (use-package ace-window
