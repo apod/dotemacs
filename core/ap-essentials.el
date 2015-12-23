@@ -152,6 +152,12 @@
               ("p" hydra-popwin/body)
               ("q" delete-window))))
 
+;;; Which key
+(use-package which-key
+  :ensure t
+  :diminish which-key
+  :config (which-key-mode))
+
 ;;; Company
 (use-package company
   :ensure t
