@@ -93,6 +93,9 @@
 ;; Projectile
 (evil-leader/set-key
   "pp" 'projectile-switch-project
-  "pf" 'projectile-find-file)
+  "pf" 'projectile-find-file
+  "pF" 'projectile-find-file-other-window
+  "pb" 'projectile-switch-to-buffer
+  "pB" 'projectile-switch-to-buffer-other-window)
 
 (provide 'ap-evil-keybindings)
