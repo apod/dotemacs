@@ -8,9 +8,12 @@
          ("\\.handlebars\\'" . web-mode)
          ("\\.hbs\\'"        . web-mode)
          ("\\.erb\\'"        . web-mode))
-  :init (setq web-mode-markup-indent-offset 2
-              web-mode-css-indent-offset    2
-              web-mode-code-indent-offset   2))
+  :init (progn
+          (setq web-mode-markup-indent-offset 2
+                web-mode-css-indent-offset    2
+                web-mode-code-indent-offset   2)
+          (evil-leader/set-key-for-mode 'web-mode
+            "mt" 'web-mode-element-close)))
 
 (use-package css-mode
   :defer t
