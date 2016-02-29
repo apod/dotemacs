@@ -5,10 +5,12 @@
   :ensure t
   :config (progn
             (add-hook 'clojure-mode-hook 'evil-smartparens-mode)
-            (ap-set-key-for-modes (clojure-mode cider-clojure-interaction-mode)
+            (add-hook 'clojurescript-mode-hook 'evil-smartparens-mode)
+            (ap-set-key-for-modes (clojure-mode clojurescript-mode cider-clojure-interaction-mode)
               "m-" 'cider-debug-defun-at-point
               "mi" 'ap-indent-defun
               "mj" 'cider-jack-in
+              "mJ" 'cider-jack-in-clojurescript
               "mz" 'cider-switch-to-repl-buffer
               "mx" 'cider-eval-defun-at-point
               "me" 'cider-eval-last-sexp
