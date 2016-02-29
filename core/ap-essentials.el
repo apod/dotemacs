@@ -80,7 +80,7 @@
   :ensure t
   :bind ("C-x o" . ace-window)
   :config (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l)
-                aw-background nil))
+                aw-background t))
 
 ;;; Popwin
 (use-package popwin
