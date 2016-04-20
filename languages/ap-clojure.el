@@ -23,7 +23,8 @@
               "mn" 'clojure-insert-ns-form
               "m`" 'ap-cider-eval-defun-at-point-or-region-in-repl
               "m5" 'ap-cider-eval-refresh-in-repl
-              "md" 'cider-doc)))
+              "md" 'cider-doc
+              "m." 'cider-find-var)))
 
 (use-package cider
   :ensure t
