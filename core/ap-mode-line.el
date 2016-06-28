@@ -48,13 +48,6 @@
                 (propertize state 'face 'bold))
               :when (bound-and-true-p evil-local-mode))
 
-            (spaceline-define-segment ap-projectile
-              "The current project name based on projectile."
-              (projectile-project-name)
-              :when (and (functionp 'projectile-project-name)
-                         (not (string= (projectile-project-name) "-"))))
-
-
             (spaceline-define-segment ap-vc
               "Current branch."
               (substring-no-properties vc-mode 5)
@@ -95,7 +88,7 @@
             (spaceline-compile "default"
                                ;; Left side
                                `((ap-evil-state :face highlight-face)
-                                 (ap-projectile :face other-face)
+                                 (projectile-root :face other-face)
                                  (ap-vc :fallback version-control :face default-face)
                                  (ap-buffer :face default-face))
                                ;; Right side
