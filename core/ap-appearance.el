@@ -19,16 +19,12 @@
 
 ;;; Line numbers
 
-(use-package linum
-  :config (add-hook 'prog-mode-hook 'linum-mode))
-
-(use-package linum-relative
+(use-package nlinum-relative
   :ensure t
-  :init (setq linum-relative-current-symbol ""
-              linum-relative-format "%4s ")
-  :config (linum-relative-on))
-
-
+  :config (progn
+            (setq nlinum-format "%4d   ")
+            (setq nlinum-relative-redisplay-delay -1)
+            (add-hook 'prog-mode-hook 'nlinum-relative-mode)))
 
 ;;; Fonts
 
@@ -45,7 +41,16 @@
 
 (use-package gruvbox-theme
   :ensure t
-  :config (load-theme 'gruvbox 'no-confirm))
+  :config (progn (load-theme 'gruvbox 'no-confirm)
+                 (set-face-attribute 'nlinum-relative-current-face nil
+                                     :background "#3c3836"
+                                     :foreground "#a89984"
+                                     :weight 'bold)))
+
+(use-package darkokai-theme
+  :ensure t
+  :disabled t
+  :config (load-theme 'darkokai 'no-confirm))
 
 (use-package dracula-theme
   :ensure t
@@ -54,6 +59,9 @@
                  (set-face-attribute 'linum-relative-current-face nil :background "#373844"
                                                                       :foreground "#6272a4"
                                                                       :weight 'bold)))
+(use-package darkokai-theme
+  :ensure t
+  :disabled t
+  :config (load-theme 'darkokai t))
 
 (provide 'ap-appearance)
-
