@@ -17,10 +17,15 @@
 ;; Option as super
 (setq mac-option-modifier 'super)
 
+;; Use all the screen height
+(set-frame-parameter nil 'fullscreen 'fullheight)
+
 (defun ap-toggle-fullscreen ()
   "Toggle fullscreen"
   (interactive)
-  (set-frame-parameter nil 'fullscreen (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
+  (set-frame-parameter nil 'fullscreen (if (not (frame-parameter nil 'fullscreen))
+                                           'fullboth
+                                         'fullheight)))
 
 ;; Keybindings
 (bind-key* "H-h" 'ns-do-hide-emacs)
