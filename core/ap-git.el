@@ -5,9 +5,14 @@
   :ensure t)
 
 (use-package gitconfig-mode
-  :ensure t)
+  :ensure t
+  :mode ("/\\.git/?config\\'"
+         "/\\.gitconfig\\.local\\'"
+         "/\\.gitmodules\\'"))
 
 (use-package gitignore-mode
-  :ensure t)
+  :ensure t
+  :mode ("/\\.gitignore\\'"
+         "/\\.gitignore\\.global\\'"))
 
 (provide 'ap-git)
