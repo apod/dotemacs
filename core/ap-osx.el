@@ -23,12 +23,12 @@
 (defun ap-toggle-fullscreen ()
   "Toggle fullscreen"
   (interactive)
-  (set-frame-parameter nil 'fullscreen (if (not (frame-parameter nil 'fullscreen))
-                                           'fullboth
-                                         'fullheight)))
+  (set-frame-parameter nil 'fullscreen
+                       (if (eq (frame-parameter nil 'fullscreen) 'fullheight)
+                           'fullboth
+                         'fullheight)))
 
 ;; Keybindings
-(bind-key* "H-h" 'ns-do-hide-emacs)
 (bind-key* "H-f" 'ap-toggle-fullscreen)
 
 ;; Disable railwaycat's touchpad gestures
