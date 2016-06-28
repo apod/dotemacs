@@ -65,7 +65,7 @@
 (require 'ap-emacs-lisp)
 (require 'ap-clojure)
 (require 'ap-ruby)
-;; (require 'ap-sml)
+(require 'ap-sml)
 (require 'ap-web)
 (require 'ap-markdown)
 (require 'ap-org)
