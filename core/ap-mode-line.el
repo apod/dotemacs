@@ -4,8 +4,6 @@
 (use-package spaceline
   :ensure t
   :config (progn
-            (setq powerline-default-separator 'box)
-
             (dolist (s '((powerline-active1 "#504945" "#a89984")
                          (powerline-active2 "#3c3836" "#a89984")
                          (mode-line "#3c3836" "#f2dbae")
@@ -13,7 +11,7 @@
                          (powerline-inactive2 "#282828" "#a89984")
                          (mode-line-inactive "#282828" "#a89984")))
               (set-face-attribute (nth 0 s) nil :background (nth 1 s)
-                                                :foreground (nth 2 s)))
+                                  :foreground (nth 2 s)))
             ;; Spaceline state faces
             (dolist (s '((spaceline-evil-normal  "#a89984")
                          (spaceline-evil-insert  "#83a598")
@@ -22,13 +20,13 @@
                          (spaceline-evil-visual  "#fe8019")
                          (spaceline-evil-motion  "#d3869b")))
               (set-face-attribute (nth 0 s) nil :background (nth 1 s)
-                                                :foreground "#2c2827"))
+                                  :foreground "#2c2827"))
 
             ;; Add a custom face for smartparens state
             (defface ap-spaceline-evil-smartparens
               `((t (:background "#f9647e"
-                    :foreground "#2c2827"
-                    :inherit 'mode-line)))
+                                :foreground "#2c2827"
+                                :inherit 'mode-line)))
               "Evil smartparens state face."
               :group 'spaceline)
 
@@ -70,13 +68,13 @@
             ;; Buffer with modified faces
             (defface ap-spaceline-modified
               `((t (:foreground "#83a598"
-                    :inherit 'mode-line)))
+                                :inherit 'mode-line)))
               "Spaceline buffer modified."
               :group 'spaceline)
 
             (defface ap-spaceline-read-only
               `((t (:foreground "#d3869b"
-                    :inherit 'mode-line)))
+                                :inherit 'mode-line)))
               "Spaceline buffer modified."
               :group 'spaceline)
 
@@ -89,20 +87,28 @@
                 ((buffer-modified-p) 'ap-spaceline-modified)
                 (t                   'mode-line))))
 
-            ;; Setup mode-line segments
-            (spaceline-install
-             `((ap-evil-state :face highlight-face)
-               (ap-projectile :face other-face)
-               (ap-vc :fallback version-control :face default-face)
-               (ap-buffer :face line-face))
+            (setq spaceline-byte-compile t)
+            (setq powerline-default-separator 'bar)
+            (setq powerline-height 24)
 
-             `((major-mode :face other-face)
-               (((minor-modes :separator spaceline-minor-modes-separator)
-                 process)
-                :when active
-                :face other-face)
-               ((selection-info
-                 ap-line-column)
-                :face highlight-face)))))
+            ;; Setup mode-line segments
+            (spaceline-compile "default"
+                               ;; Left side
+                               `((ap-evil-state :face highlight-face)
+                                 (ap-projectile :face other-face)
+                                 (ap-vc :fallback version-control :face default-face)
+                                 (ap-buffer :face default-face))
+                               ;; Right side
+                               `((major-mode :face other-face)
+                                 (((minor-modes :separator spaceline-minor-modes-separator)
+                                   process)
+                                  :when active
+                                  :face other-face)
+                                 ((selection-info
+                                   ap-line-column)
+                                  :face highlight-face)))
+
+            (setq-default mode-line-format '("%e" (:eval (spaceline-ml-default))))))
+
 
 (provide 'ap-mode-line)
