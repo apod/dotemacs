@@ -33,6 +33,7 @@
           (push '("*cider-error*" :width 0.5 :position right) popwin:special-display-config)
 
           (setq nrepl-hide-special-buffers t
+                cider-repl-display-help-banner nil
                 cider-repl-pop-to-buffer-on-connect nil
                 cider-repl-history-file (expand-file-name "cider-repl-history" ap-data-directory)))
   :config (progn
