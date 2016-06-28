@@ -46,22 +46,4 @@
                                      :background "#3c3836"
                                      :foreground "#a89984"
                                      :weight 'bold)))
-
-(use-package darkokai-theme
-  :ensure t
-  :disabled t
-  :config (load-theme 'darkokai 'no-confirm))
-
-(use-package dracula-theme
-  :ensure t
-  :disabled t
-  :config (progn (load-theme 'dracula 'no-confirm)
-                 (set-face-attribute 'linum-relative-current-face nil :background "#373844"
-                                                                      :foreground "#6272a4"
-                                                                      :weight 'bold)))
-(use-package darkokai-theme
-  :ensure t
-  :disabled t
-  :config (load-theme 'darkokai t))
-
 (provide 'ap-appearance)
