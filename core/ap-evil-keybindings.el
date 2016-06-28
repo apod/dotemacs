@@ -82,6 +82,7 @@
 
 ;; Toggle
 (evil-leader/set-key
+  "tr" 'rainbow-mode
   "tn" 'global-linum-mode
   "th" 'whitespace-mode
   "ts" 'smartparens-strict-mode)
