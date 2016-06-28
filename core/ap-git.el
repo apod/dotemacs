@@ -2,7 +2,8 @@
 ;;; Git packages
 
 (use-package magit
-  :ensure t)
+  :ensure t
+  :commands magit-status)
 
 (use-package gitconfig-mode
   :ensure t
@@ -18,6 +19,5 @@
 (use-package gitattributes-mode
   :ensure t
   :mode "/\\.gitattributes\\'")
-
 
 (provide 'ap-git)
