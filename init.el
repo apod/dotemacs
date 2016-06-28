@@ -58,6 +58,7 @@
 (require 'ap-essentials)
 (require 'ap-evil)
 (require 'ap-evil-keybindings)
+(require 'ap-git)
 (require 'ap-ido)
 
 ;;; Languages

@@ -14,16 +14,6 @@
                                              (projectile-project-name))))
   :config (projectile-global-mode t))
 
-;;; Git packages
-(use-package magit
-  :ensure t)
-
-(use-package gitconfig-mode
-  :ensure t)
-
-(use-package gitignore-mode
-  :ensure t)
-
 ;;; Rainbow delimiters
 (use-package rainbow-delimiters
   :ensure t
