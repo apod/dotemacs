@@ -1,5 +1,9 @@
 ;;; init.el
 
+;; Activate installed packages now
+(setq package-enable-at-startup nil)
+(package-initialize)
+
 ;; Maximum number of lines to keep in the message log buffer
 (setq message-log-max 16384)
 

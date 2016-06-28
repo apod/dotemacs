@@ -11,10 +11,6 @@
 
 (add-to-list 'package-pinned-packages '(cider . "melpa-stable") t)
 
-;; Activate installed packages now
-(setq package-enable-at-startup nil)
-(package-initialize)
-
 ;; Make sure use-package is installed
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
