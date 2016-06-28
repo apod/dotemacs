@@ -3,9 +3,10 @@
 
 (use-package org
   :ensure t
-  :defer t
-  :init (setq org-log-done 'time)
-  :config (evil-leader/set-key-for-mode 'org-mode
+  :mode ("\\.org\\'" . org-mode)
+  :config
+  (setq org-log-done 'time)
+  (evil-leader/set-key-for-mode 'org-mode
             "h" 'org-metaleft
             "j" 'org-metadown
             "k" 'org-metaup
