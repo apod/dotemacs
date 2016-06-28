@@ -1,5 +1,9 @@
 ;;; init.el
 
+(defconst ap-emacs-start-time
+  (current-time)
+  "The time when init.el is called")
+
 ;; Activate installed packages now
 (setq package-enable-at-startup nil)
 (package-initialize)
@@ -76,3 +80,8 @@
 ;; Load local machine configurations
 (when (file-exists-p ap-local-directory)
   (mapc 'load (directory-files ap-local-directory 't "^[^#].*el$")))
+
+;; Alter scratch message to show load time
+(setq initial-scratch-message
+      (format ";; λx.x\n;; Loaded in %.3fs\n"
+              (float-time (time-subtract after-init-time ap-emacs-start-time))))
