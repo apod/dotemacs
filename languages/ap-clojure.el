@@ -4,6 +4,7 @@
 (use-package clojure-mode
   :ensure t
   :mode ("\\.clj\\'" "\\.cljs\\'")
+  :interpreter "inlein"
   :config
   (add-hook 'clojure-mode-hook 'evil-smartparens-mode)
   (add-hook 'clojurescript-mode-hook 'evil-smartparens-mode)
