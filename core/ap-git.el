@@ -15,4 +15,9 @@
   :mode ("/\\.gitignore\\'"
          "/\\.gitignore\\.global\\'"))
 
+(use-package gitattributes-mode
+  :ensure t
+  :mode "/\\.gitattributes\\'")
+
+
 (provide 'ap-git)
