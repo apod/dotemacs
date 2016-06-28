@@ -22,7 +22,7 @@
 (use-package nlinum-relative
   :ensure t
   :config (progn
-            (setq nlinum-format "%4d   ")
+            (setq nlinum-format "%4d ")
             (setq nlinum-relative-redisplay-delay -1)
             (add-hook 'prog-mode-hook 'nlinum-relative-mode)))
 
