@@ -3,7 +3,10 @@
 
 (use-package magit
   :ensure t
-  :commands magit-status)
+  :commands magit-status
+  :config
+  (use-package evil-magit
+    :ensure t))
 
 (use-package gitconfig-mode
   :ensure t
