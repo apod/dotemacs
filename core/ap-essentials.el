@@ -78,4 +78,14 @@
   :commands (company-mode global-company-mode)
   :config (setq company-tooltip-align-annotations t))
 
+;; Shackle
+(use-package shackle
+  :ensure t
+  :config
+  (setq shackle-rules '((compilation-mode :noselect t)
+                        (cider-repl-mode :align below :size 0.3)
+                        ("*cider-error*" :align right :size 0.4))
+        shackle-default-rule '(:select t))
+  (shackle-mode t))
+
 (provide 'ap-essentials)
