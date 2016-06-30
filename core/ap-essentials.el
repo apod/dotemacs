@@ -154,6 +154,7 @@
 ;;; Company
 (use-package company
   :ensure t
+  :commands (company-mode global-company-mode)
   :config (setq company-tooltip-align-annotations t))
 
 (provide 'ap-essentials)
