@@ -31,8 +31,7 @@
 
   ;; Custom faces
   (defface ap-spaceline-evil-smartparens
-    `((t (:background ,ap-theme-color5
-                      :inherit 'mode-line)))
+    `((t (:background ,ap-theme-color5 :foreground ,ap-theme-dark0 :inherit 'mode-line)))
     "Evil smartparens state face."
     :group 'spaceline)
 
