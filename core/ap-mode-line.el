@@ -48,11 +48,19 @@
                 (propertize state 'face 'bold))
               :when (bound-and-true-p evil-local-mode))
 
-            (spaceline-define-segment ap-vc
-              "Current branch."
-              (substring-no-properties vc-mode 5)
-              :when (and vc-mode
-                         (string= (vc-backend (buffer-file-name (current-buffer))) "Git")))
+            (spaceline-define-segment ap-vc-and-projectile
+              "Current git branch and projectile project."
+              (let ((vc (when (and vc-mode
+                                   (string= (vc-backend (buffer-file-name (current-buffer))) "Git"))
+                          (substring-no-properties vc-mode 5)))
+                    (pr (when (and (fboundp 'projectile-project-p)
+                                   (stringp (projectile-project-p))
+                                   (not (string= (projectile-project-name) (buffer-name))))
+                          (projectile-project-name))))
+                (cond
+                 ((and vc pr) (concat pr " (" vc ")"))
+                 (pr pr)
+                 (t nil))))
 
             (spaceline-define-segment ap-line-column
               "The current line and column numbers."
@@ -68,7 +76,7 @@
             (defface ap-spaceline-read-only
               `((t (:foreground "#d3869b"
                                 :inherit 'mode-line)))
-              "Spaceline buffer modified."
+              "Spaceline buffer is readline."
               :group 'spaceline)
 
             (spaceline-define-segment ap-buffer
@@ -87,10 +95,9 @@
             ;; Setup mode-line segments
             (spaceline-compile "default"
                                ;; Left side
-                               `((ap-evil-state :face highlight-face)
-                                 (projectile-root :face other-face)
-                                 (ap-vc :fallback version-control :face default-face)
-                                 (ap-buffer :face default-face))
+                               `((ap-evil-state :face highlight-face :skip-alternate t)
+                                 (ap-vc-and-projectile)
+                                 (ap-buffer :tight t))
                                ;; Right side
                                `((major-mode :face other-face)
                                  (((minor-modes :separator spaceline-minor-modes-separator)
