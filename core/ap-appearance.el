@@ -17,15 +17,6 @@
                                 "[no file]"))
                               (concat "- " invocation-name))))
 
-;;; Line numbers
-
-(use-package nlinum-relative
-  :ensure t
-  :config (progn
-            (setq nlinum-format "%4d ")
-            (setq nlinum-relative-redisplay-delay -1)
-            (add-hook 'prog-mode-hook 'nlinum-relative-mode)))
-
 ;;; Fonts
 
 (when (member "M+ 1mn" (font-family-list))
@@ -38,12 +29,37 @@
   (before theme-dont-propagate activate)
   (mapc #'disable-theme custom-enabled-themes))
 
+;;; Theme colors
+
+(defvar ap-theme-dark0   "#282828")
+(defvar ap-theme-dark1   "#3c3836")
+(defvar ap-theme-dark2   "#504945")
+(defvar ap-theme-light0  "#a89984")
+(defvar ap-theme-light1  "#f2dbae")
+(defvar ap-theme-light2  "#fbf1c7")
+(defvar ap-theme-color1  "#83a598")
+(defvar ap-theme-color2  "#8ec07c")
+(defvar ap-theme-color3  "#fe8019")
+(defvar ap-theme-color4  "#d3869b")
+(defvar ap-theme-color5  "#f9647e")
 
 (use-package gruvbox-theme
   :ensure t
-  :config (progn (load-theme 'gruvbox 'no-confirm)
-                 (set-face-attribute 'nlinum-relative-current-face nil
-                                     :background "#3c3836"
-                                     :foreground "#a89984"
-                                     :weight 'bold)))
+  :config
+  (load-theme 'gruvbox 'no-confirm))
+
+;;; Line numbers
+(use-package nlinum-relative
+  :ensure t
+  :config
+  (setq nlinum-format "%4d ")
+  (setq nlinum-relative-redisplay-delay -1)
+
+  (set-face-attribute 'nlinum-relative-current-face nil
+                      :background ap-theme-dark1
+                      :foreground ap-theme-light0
+                      :weight 'bold)
+
+  (add-hook 'prog-mode-hook 'nlinum-relative-mode))
+
 (provide 'ap-appearance)
