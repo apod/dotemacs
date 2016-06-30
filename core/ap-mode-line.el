@@ -107,6 +107,7 @@
                                   :face other-face)
                                  ((selection-info
                                    ap-line-column)
+                                  :when active
                                   :face highlight-face)))
 
             (setq-default mode-line-format '("%e" (:eval (spaceline-ml-default))))))
