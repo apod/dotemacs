@@ -6,23 +6,26 @@
 
 (use-package evil
   :ensure t
-  :init (progn
-          (setq evil-want-C-u-scroll t)
-          (setq-default evil-symbol-word-search t)
-          (setq evil-normal-state-cursor '("#a89984" box)
-                evil-emacs-state-cursor  '("#fbf1c7" box)
-                evil-insert-state-cursor '("#83a598"  (bar . 2))
-                evil-replace-state-cursor '("#8ec07c"  (bar . 2))
-                evil-visual-state-cursor '("#fe8019" (hbar . 2))
-                evil-motion-state-cursor '("#d3869b" box)
-                evil-smartparens-state-cursor '("#f9647e" box)))
-  :config (progn
-            (use-package evil-leader
-              :ensure t
-              :config (progn
-                        (evil-leader/set-leader "<SPC>")
-                        (global-evil-leader-mode t)))
-            (evil-mode t)))
+
+  :init
+  (setq evil-want-C-u-scroll t)
+  (setq-default evil-symbol-word-search t)
+
+  (setq evil-normal-state-cursor      `(,ap-theme-light0 box)
+        evil-emacs-state-cursor       `(,ap-theme-light1 box)
+        evil-insert-state-cursor      `(,ap-theme-color1 (bar . 2))
+        evil-replace-state-cursor     `(,ap-theme-color2 (bar . 2))
+        evil-visual-state-cursor      `(,ap-theme-color3 (hbar . 2))
+        evil-motion-state-cursor      `(,ap-theme-color4 box)
+        evil-smartparens-state-cursor `(,ap-theme-color5 box))
+
+  :config
+  (use-package evil-leader
+    :ensure t
+    :config
+    (evil-leader/set-leader "<SPC>")
+    (global-evil-leader-mode t))
+  (evil-mode t))
 
 (use-package evil-surround
   :ensure t
@@ -34,9 +37,10 @@
 
 (use-package evil-nerd-commenter
   :ensure t
-  :config (progn
-            (bind-key "gc" 'evilnc-comment-operator  evil-normal-state-map)
-            (bind-key "gc" 'evilnc-comment-operator  evil-visual-state-map)))
+  :bind (:map evil-normal-state-map
+         ("gc" . evilnc-comment-operator)
+         :map evil-visual-state-map
+         ("gc" . evilnc-comment-operator)))
 
 (use-package evil-exchange
   :ensure t
