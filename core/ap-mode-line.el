@@ -30,6 +30,23 @@
               "Evil smartparens state face."
               :group 'spaceline)
 
+            ;; Buffer with modified faces
+            (defface ap-spaceline-modified
+              `((t (:foreground "#83a598"
+                                :inherit 'mode-line)))
+              "Spaceline buffer modified."
+              :group 'spaceline)
+
+            (defface ap-spaceline-read-only
+              `((t (:foreground "#d3869b"
+                                :inherit 'mode-line)))
+              "Spaceline buffer is readline."
+              :group 'spaceline)
+
+            (setq spaceline-byte-compile t)
+            (setq powerline-default-separator 'bar)
+            (setq powerline-height 24)
+
             (add-to-list 'spaceline-evil-state-faces
                          '(smartparens . ap-spaceline-evil-smartparens))
 
@@ -37,8 +54,9 @@
             (setq spaceline-highlight-face-func
                   'spaceline-highlight-face-evil-state)
 
-            ;; Custom spaceline segments
+            ;; Custom segments
             (require 'spaceline-segments)
+
             (spaceline-define-segment ap-evil-state
               "The current evil state, without the tag brackets."
               (let ((state
@@ -62,23 +80,6 @@
                  (pr pr)
                  (t nil))))
 
-            (spaceline-define-segment ap-line-column
-              "The current line and column numbers."
-              "%2l:%2c")
-
-            ;; Buffer with modified faces
-            (defface ap-spaceline-modified
-              `((t (:foreground "#83a598"
-                                :inherit 'mode-line)))
-              "Spaceline buffer modified."
-              :group 'spaceline)
-
-            (defface ap-spaceline-read-only
-              `((t (:foreground "#d3869b"
-                                :inherit 'mode-line)))
-              "Spaceline buffer is readline."
-              :group 'spaceline)
-
             (spaceline-define-segment ap-buffer
               "Name of buffer with modified faces"
               (powerline-buffer-id
@@ -88,11 +89,11 @@
                 ((buffer-modified-p) 'ap-spaceline-modified)
                 (t                   'mode-line))))
 
-            (setq spaceline-byte-compile t)
-            (setq powerline-default-separator 'bar)
-            (setq powerline-height 24)
+            (spaceline-define-segment ap-line-column
+              "The current line and column numbers."
+              "%2l:%2c")
 
-            ;; Setup mode-line segments
+            ;; Setup mode-line
             (spaceline-compile "default"
                                ;; Left side
                                `((ap-evil-state :face highlight-face :skip-alternate t)
