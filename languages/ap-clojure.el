@@ -53,9 +53,6 @@
   :ensure t
   :commands (cider-jack-in cider-jack-in-clojurescript)
   :init
-  (push '(cider-repl-mode :stick t) popwin:special-display-config)
-  (push '("*cider-error*" :width 0.5 :position right) popwin:special-display-config)
-
   (setq nrepl-hide-special-buffers t
         cider-repl-display-help-banner nil
         cider-repl-pop-to-buffer-on-connect nil

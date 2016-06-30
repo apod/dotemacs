@@ -69,10 +69,6 @@
   "bk" 'kill-buffer
   "bK" 'kill-buffer-and-window)
 
-;; Windows
-(evil-leader/set-key
-  "w" 'hydra-window/body)
-
 ;; Narrowing
 (evil-leader/set-key
   "nn" 'ap-narrow-or-widen-dwim
@@ -98,5 +94,34 @@
   "pF" 'projectile-find-file-other-window
   "pb" 'projectile-switch-to-buffer
   "pB" 'projectile-switch-to-buffer-other-window)
+
+;; Window management
+(evil-leader/set-key
+  "ww" 'ace-window
+  "wm" 'ace-swap-window
+  "wd" 'ace-delete-window
+  "wh" 'windmove-left
+  "wj" 'windmove-down
+  "wk" 'windmove-up
+  "wl" 'windmove-right
+  "wH" 'ap-move-splitter-left
+  "wJ" 'ap-move-splitter-down
+  "wK" 'ap-move-splitter-up
+  "wL" 'ap-move-splitter-right
+  "w=" 'balance-windows
+  "ws" 'ap-split-window-vertically-and-focus
+  "wv" 'ap-split-window-horizontally-and-focus
+  "wS" 'split-window-vertically
+  "wV" 'split-window-horizontally
+  "w1" 'zygospore-toggle-delete-other-windows
+  "wq" 'delete-window)
+
+;; Frame management
+(evil-leader/set-key
+  "wfn" 'new-frame
+  "wfd" 'delete-frame
+  "wff" 'other-frame)
+
+
 
 (provide 'ap-evil-keybindings)
