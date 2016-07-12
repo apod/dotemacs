@@ -72,6 +72,7 @@
 (require 'ap-ruby)
 (require 'ap-web)
 (require 'ap-sml)
+(require 'ap-elm)
 
 ;;; Final loads
 
