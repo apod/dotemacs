@@ -85,5 +85,5 @@
 
 ;; Alter scratch message to show load time
 (setq initial-scratch-message
-      (format ";; λx.x\n;; Loaded in %.3fs\n"
+      (format ";; (λx.xx)(λx.xx)\n;; Loaded in %.3fs\n"
               (float-time (time-subtract after-init-time ap-emacs-start-time))))
