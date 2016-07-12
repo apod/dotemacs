@@ -73,6 +73,7 @@
 (require 'ap-web)
 (require 'ap-sml)
 (require 'ap-elm)
+(require 'ap-haskell)
 
 ;;; Final loads
 
