@@ -78,6 +78,11 @@
   :commands (company-mode global-company-mode)
   :config (setq company-tooltip-align-annotations t))
 
+;;; Flycheck
+(use-package flycheck
+  :ensure t
+  :commands (flycheck-mode global-flycheck-mode))
+
 ;; Shackle
 (use-package shackle
   :ensure t
