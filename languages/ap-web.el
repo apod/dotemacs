@@ -25,6 +25,10 @@
   :ensure t
   :mode "\\.scss\\'")
 
+(use-package less-css-mode
+  :ensure t
+  :mode ("\\.less\\'" "\\.variables\\'"))
+
 (use-package rainbow-mode
   :ensure t
   :commands (rainbow-mode))
