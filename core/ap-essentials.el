@@ -64,7 +64,17 @@
   :commands (ace-window)
   :config
   (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l)
-        aw-background t))
+        aw-background t)
+  (set-face-attribute 'aw-background-face nil
+                      :foreground ap-theme-dark2
+                      :background ap-theme-dark0
+                      :inverse-video nil)
+  (set-face-attribute 'aw-leading-char-face nil
+                      :foreground ap-theme-color6
+                      :background nil
+                      :height 1.3
+                      :weight 'bold
+                      :box nil))
 
 ;;; Which key
 (use-package which-key

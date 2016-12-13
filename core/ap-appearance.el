@@ -42,6 +42,7 @@
 (defvar ap-theme-color3  "#fe8019")
 (defvar ap-theme-color4  "#d3869b")
 (defvar ap-theme-color5  "#f9647e")
+(defvar ap-theme-color6  "#fb4934")
 
 (use-package gruvbox-theme
   :ensure t
