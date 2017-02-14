@@ -3,8 +3,11 @@
 
 (use-package clojure-mode
   :ensure t
-  :mode ("\\.clj\\'" "\\.cljs\\'")
-  :interpreter "inlein"
+  :mode (("\\.clj\\'"  . clojure-mode)
+         ("\\.cljs\\'" . clojurescript-mode)
+         ("\\.cljc\\'" . clojurec-mode)
+         ("\\.cljx\\'" . clojurex-mode)
+         ("\\.edn\\'"  . clojure-mode))
   :config
   (add-hook 'clojure-mode-hook 'evil-smartparens-mode)
   (add-hook 'clojurescript-mode-hook 'evil-smartparens-mode)
