@@ -129,6 +129,15 @@
   :config
 
   (evil-leader/set-key-for-mode 'cider-repl-mode
-    "mz" 'cider-switch-to-last-clojure-buffer))
+    "mz" 'cider-switch-to-last-clojure-buffer)
+
+  (evil-define-key 'normal cider-inspector-mode-map
+    (kbd "RET") 'cider-inspector-operate-on-point
+    (kbd "DEL") 'cider-inspector-pop
+    (kbd "r")   'cider-inspector-refresh
+    (kbd "q")   'cider-popup-buffer-quit
+    (kbd "p")   'cider-inspector-next-page
+    (kbd "P")   'cider-inspector-previous-page
+    (kbd "s")   'cider-inspector-set-page-size))
 
 (provide 'ap-clojure)
