@@ -103,4 +103,13 @@
         shackle-default-rule '(:select t))
   (shackle-mode t))
 
+;; Essentials
+(use-package golden-ratio
+  :ensure t
+  :diminish golden-ratio-mode
+  :config
+  (add-to-list 'golden-ratio-extra-commands 'ace-window)
+  :init
+  (golden-ratio-mode t))
+
 (provide 'ap-essentials)

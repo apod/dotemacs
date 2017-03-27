@@ -46,6 +46,10 @@
   :ensure t
   :config (evil-exchange-install))
 
+(use-package evil-lion
+  :ensure t
+  :config (evil-lion-mode))
+
 (use-package evil-smartparens
   :load-path "lisp/")
 
