@@ -116,6 +116,12 @@
   "w1" 'zygospore-toggle-delete-other-windows
   "wq" 'delete-window)
 
+(evil-leader/set-key
+  "jo" 'dumb-jump-go-other-window
+  "jt" 'dumb-jump-quick-look
+  "jj" 'dumb-jump-go
+  "jb" 'dumb-jump-back)
+
 ;; Frame management
 (evil-leader/set-key
   "wfn" 'new-frame

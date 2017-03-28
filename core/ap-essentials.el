@@ -103,7 +103,7 @@
         shackle-default-rule '(:select t))
   (shackle-mode t))
 
-;; Essentials
+;; Golden ratio on window splits
 (use-package golden-ratio
   :ensure t
   :diminish golden-ratio-mode
@@ -111,5 +111,10 @@
   (add-to-list 'golden-ratio-extra-commands 'ace-window)
   :init
   (golden-ratio-mode t))
+
+;; Dumb-jump
+(use-package dumb-jump
+  :ensure t
+  :config (setq dumb-jump-prefer-searcher 'rg))
 
 (provide 'ap-essentials)
