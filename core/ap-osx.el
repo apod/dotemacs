@@ -37,7 +37,4 @@
 (global-set-key [S-magnify-up] 'ignore)
 (global-set-key [S-magnify-down] 'ignore)
 
-;; Disable beeping
-(setq ring-bell-function 'ignore)
-
 (provide 'ap-osx)

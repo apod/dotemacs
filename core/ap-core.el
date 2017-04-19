@@ -31,6 +31,9 @@
 ;; Disable mouse wheel scroll
 (mouse-wheel-mode -1)
 
+;; Disable beeping
+(setq ring-bell-function 'ignore)
+
 ;; Answer questions with y or n
 (defalias 'yes-or-no-p 'y-or-n-p)
 
