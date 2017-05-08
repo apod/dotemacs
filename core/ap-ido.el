@@ -15,8 +15,7 @@
                   (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name)))))
 
             (ido-mode t)
-            (ido-everywhere t))
-  :bind (("C-x k" . kill-this-buffer)))
+            (ido-everywhere t)))
 
 ;; Use ido everywhere
 (use-package ido-ubiquitous
