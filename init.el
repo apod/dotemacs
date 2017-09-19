@@ -74,6 +74,7 @@
 (require 'ap-sml)
 (require 'ap-elm)
 (require 'ap-haskell)
+(require 'ap-sql)
 (require 'ap-graphviz-dot)
 
 ;;; Final loads
