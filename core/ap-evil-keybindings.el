@@ -77,8 +77,19 @@
   "nw" 'widen)
 
 ;; Toggle
+
+(setq ap-initial-face-height (face-attribute 'default :height))
+
+(defun ap-toggle-face-height ()
+  (interactive)
+  (let ((current-height (face-attribute 'default :height)))
+    (if (= current-height ap-initial-face-height)
+        (set-face-attribute 'default nil :height (+ ap-initial-face-height 60))
+      (set-face-attribute 'default nil :height ap-initial-face-height))))
+
 (evil-leader/set-key
   "tr" 'rainbow-mode
+  "tt" 'ap-toggle-face-height
   "tn" 'global-linum-mode
   "th" 'whitespace-mode
   "ts" 'smartparens-strict-mode)
