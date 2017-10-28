@@ -37,6 +37,7 @@
     :init
     (defun ap-clj-refactor ()
       (setq cljr-favor-private-functions nil)
+      (setq cljr-favor-prefix-notation t)
       (clj-refactor-mode t))
 
     (add-hook 'clojure-mode-hook 'ap-clj-refactor)
