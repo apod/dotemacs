@@ -30,7 +30,11 @@
                         "m`" 'ap-cider-eval-defun-at-point-or-region-in-repl
                         "m5" 'ap-cider-eval-refresh-in-repl
                         "md" 'cider-doc
-                        "m." 'cider-find-dwim)
+                        "m." 'cider-find-dwim
+                        "mtn" 'cider-test-run-ns-tests
+                        "mtp" 'cider-test-run-project-tests
+                        "mtl" 'cider-test-run-loaded-tests
+                        "mtt" 'cider-test-run-test)
 
   (use-package clj-refactor
     :ensure t
