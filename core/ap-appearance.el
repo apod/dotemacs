@@ -49,18 +49,23 @@
   :config
   (load-theme 'gruvbox 'no-confirm))
 
+;; (use-package nordless-theme
+;;   :ensure t
+;;   :config
+;;   (load-theme 'nordless 'no-confirm))
+
 ;;; Line numbers
-(use-package nlinum-relative
-  :ensure t
-  :config
-  (setq nlinum-format "%4d ")
-  (setq nlinum-relative-redisplay-delay -1)
+;; (use-package nlinum-relative
+;;   :ensure t
+;;   :config
+;;   (setq nlinum-format "%4d ")
+;;   (setq nlinum-relative-redisplay-delay -1)
 
-  (set-face-attribute 'nlinum-relative-current-face nil
-                      :background ap-theme-dark1
-                      :foreground ap-theme-light0
-                      :weight 'bold)
+;;   (set-face-attribute 'nlinum-relative-current-face nil
+;;                       :background ap-theme-dark1
+;;                       :foreground ap-theme-light0
+;;                       :weight 'bold)
 
-  (add-hook 'prog-mode-hook 'nlinum-relative-mode))
+;;  (add-hook 'prog-mode-hook 'nlinum-relative-mode))
 
 (provide 'ap-appearance)

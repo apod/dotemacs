@@ -9,7 +9,9 @@
                          ("org" . "http://orgmode.org/elpa/")
                          ("gnu" . "http://elpa.gnu.org/packages/")))
 
-(add-to-list 'package-pinned-packages '(cider . "melpa-stable") t)
+(setq package-pinned-packages
+      (append package-pinned-packages '((cider . "melpa-stable")
+                                        (clj-refactor . "melpa-stable"))))
 
 ;; Make sure use-package is installed
 (unless (package-installed-p 'use-package)

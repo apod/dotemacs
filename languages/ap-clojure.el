@@ -36,26 +36,27 @@
                         "mtl" 'cider-test-run-loaded-tests
                         "mtt" 'cider-test-run-test)
 
-  (use-package clj-refactor
-    :ensure t
-    :init
-    (defun ap-clj-refactor ()
-      (setq cljr-favor-private-functions nil)
-      (setq cljr-favor-prefix-notation t)
-      (clj-refactor-mode t))
+  ;; (use-package clj-refactor
+  ;;   :ensure t
+  ;;   :init
+  ;;   (defun ap-clj-refactor ()
+  ;;     (setq cljr-favor-private-functions nil)
+  ;;     (setq cljr-favor-prefix-notation t)
+  ;;     (clj-refactor-mode t))
 
-    (add-hook 'clojure-mode-hook 'ap-clj-refactor)
+  ;;   (add-hook 'clojure-mode-hook 'ap-clj-refactor)
 
-    :config
-    (ap-set-key-for-modes (clojure-mode cider-clojure-interaction-mode)
-                          "ru"  'cljr-find-usages
-                          "rnc" 'cljr-clean-ns
-                          "rnp" 'cljr-sort-project-dependencies
-                          "rtf" 'cljr-thread-first-all
-                          "rtl" 'cljr-thread-last-all
-                          "rtu" 'cljr-unwind
-                          "rtU" 'cljr-unwind-all
-                          "re" 'cljr-extract-function)))
+  ;;   :config
+  ;;   (ap-set-key-for-modes (clojure-mode cider-clojure-interaction-mode)
+  ;;                         "ru"  'cljr-find-usages
+  ;;                         "rnc" 'cljr-clean-ns
+  ;;                         "rnp" 'cljr-sort-project-dependencies
+  ;;                         "rtf" 'cljr-thread-first-all
+  ;;                         "rtl" 'cljr-thread-last-all
+  ;;                         "rtu" 'cljr-unwind
+  ;;                         "rtU" 'cljr-unwind-all
+  ;;                         "re" 'cljr-extract-function))
+  )
 
 (use-package cider
   :ensure t

@@ -50,6 +50,10 @@
   :ensure t
   :config (evil-lion-mode))
 
+(use-package evil-matchit
+  :ensure t
+  :config (global-evil-matchit-mode t))
+
 (use-package evil-smartparens
   :load-path "lisp/")
 

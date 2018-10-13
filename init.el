@@ -67,9 +67,11 @@
 
 (require 'ap-org)
 (require 'ap-markdown)
+(require 'ap-tex)
 
 (require 'ap-clojure)
 (require 'ap-ruby)
+(require 'ap-python)
 (require 'ap-web)
 (require 'ap-sml)
 (require 'ap-elm)
@@ -77,6 +79,7 @@
 (require 'ap-sql)
 (require 'ap-lua)
 (require 'ap-graphviz-dot)
+(require 'ap-elixir)
 
 ;;; Final loads
 
