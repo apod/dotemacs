@@ -29,6 +29,7 @@
                         "mn" 'clojure-insert-ns-form
                         "m`" 'ap-cider-eval-defun-at-point-or-region-in-repl
                         "m5" 'ap-cider-eval-refresh-in-repl
+                        "mc" 'ap-cider-repl-clear-buffer
                         "md" 'cider-doc
                         "m." 'cider-find-dwim
                         "mtn" 'cider-test-run-ns-tests
@@ -75,6 +76,12 @@
     (goto-char (point-max))
     (cider-repl-delete-current-input)
     (insert "(reloaded.repl/reset)")
+    (cider-repl-return))
+
+(defun ap-cider-repl-clear-buffer ()
+    (interactive)
+    (set-buffer (cider-current-repl-buffer))
+    (cider-repl-clear-buffer)
     (cider-repl-return))
 
   (defun ap-cider-eval-defun-at-point-or-region-in-repl ()
