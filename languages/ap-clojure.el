@@ -78,7 +78,7 @@
     (insert "(reloaded.repl/reset)")
     (cider-repl-return))
 
-(defun ap-cider-repl-clear-buffer ()
+  (defun ap-cider-repl-clear-buffer ()
     (interactive)
     (set-buffer (cider-current-repl-buffer))
     (cider-repl-clear-buffer)
@@ -142,6 +142,7 @@
   :config
 
   (evil-leader/set-key-for-mode 'cider-repl-mode
+    "mc" 'cider-repl-clear-buffer
     "mz" 'cider-switch-to-last-clojure-buffer)
 
   (evil-define-key 'normal cider-inspector-mode-map
